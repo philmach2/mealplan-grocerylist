@@ -10,7 +10,7 @@ const connectDB = require('./config/database')
 require('dotenv').config({path: './config/.env'})
 
 //DB function is called to connect to DB w Mongoose
-connectDB()
+// connectDB()
 
 //using ejs view engine, can change to any front end framework
 app.set('view engine', 'ejs')
