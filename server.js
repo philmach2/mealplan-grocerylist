@@ -1,6 +1,3 @@
-// will it work now???
-
-
 //express framework over node
 const express = require('express')
 const app = express()
@@ -27,7 +24,7 @@ app.use(express.json())
 
 // MEAL PLAN
 
-
+// mongodb user and pw: mpgl, chrisandphil
 
 
 
