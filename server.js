@@ -29,6 +29,11 @@ app.use(express.json())
 
 
 // GROCERY LIST
+app.get('/grocery-list', (req, res) => {
+    
+})
+
+
 
 
 //using environment variable for port
