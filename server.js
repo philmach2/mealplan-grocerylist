@@ -30,7 +30,7 @@ app.use(express.json())
 
 // GROCERY LIST
 app.get('/grocery-list', (req, res) => {
-    
+    res.render('grocery-list.ejs')
 })
 
 
