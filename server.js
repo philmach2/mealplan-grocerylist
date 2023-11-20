@@ -29,7 +29,6 @@ app.get('/meal-plan', (req, res) => {
 
 
 
-
 // GROCERY LIST
 //get request responds with the rendering of <SPECIFIED>.ejs file
 app.get('/grocery-list', (req, res) => {
