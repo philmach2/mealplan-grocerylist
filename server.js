@@ -18,26 +18,25 @@ MongoClient.connect(dbConnectionStr)
         db = client.db(dbName)
         //to access grocery-list-collection in DB
         groceryListCollection = db.collection('entries')
+
+    // MEAL PLAN
+    app.get('/meal-plan', (req, res) => {
+        res.render('meal-plan.ejs')
+    })
+
+
+    // GROCERY LIST
+    app.get('/grocery-list', (req, res) => {
+        res.render('grocery-list.ejs')
+    })
+
+    app.post('/grocery-list', (req,res) => {
+        console.log(req.body)
+    })
+
+
+    // Server Connect
+    app.listen(process.env.PORT, () => {
+        console.log('Server is running, you better catch it!')
+    })  
 }) 
-
-
-// MEAL PLAN
-app.get('/meal-plan', (req, res) => {
-    res.render('meal-plan.ejs')
-})
-
-
-// GROCERY LIST
-app.get('/grocery-list', (req, res) => {
-    res.render('grocery-list.ejs')
-})
-
-app.post('/grocery-list', (req,res) => {
-    console.log(req.body)
-})
-
-
-// Server Connect
-app.listen(process.env.PORT, () => {
-    console.log('Server is running, you better catch it!')
-})  
