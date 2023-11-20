@@ -18,7 +18,6 @@ app.get('/meal-plan', (req, res) => {
 })
 
 
-
 // GROCERY LIST
 app.get('/grocery-list', (req, res) => {
     res.render('grocery-list.ejs')
@@ -27,7 +26,6 @@ app.get('/grocery-list', (req, res) => {
 app.post('/grocery-list', (req,res) => {
     console.log(req.body)
 })
-
 
 
 // Server Connect
