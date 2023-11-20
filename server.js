@@ -23,7 +23,9 @@ app.use(express.json())
 
 
 // MEAL PLAN
-
+app.get('/meal-plan', (req, res) => {
+    res.render('meal-plan.ejs')
+})
 
 
 
