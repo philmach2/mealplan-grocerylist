@@ -1,3 +1,6 @@
 //variable for DOM buttons (grocery-list.ejs)
-const addItem = document.querySelector('#add-item-button')
+const numOfItems = document.querySelector('#number-item-button')
 
+numOfItems.addEventListener('click', _ => {
+    //want to send post request on click
+})

@@ -8,26 +8,41 @@
 <body>
 
     <h1>GROCERY LIST</h1>
-    <button>MEAL PLAN</button>
+    <h2><a href="meal-plan">Meal Plan</a></h2>
 
     <h3>FRUIT/VEGETABLE</h3>
-    <button id="add-item-button">+</button>
+    <form action="/grocery-list" method="POST">
+        <input type="text" placeholder="Add Item" name="produce">
+    </form>
+    <button id="number-item-button">+</button>
    
 
     <h3>PROTEIN</h3>
-    <button id="add-item-button">+</button>
+    <form action="/grocery-list" method="POST">
+        <input type="text" placeholder="Add Item" name="protein">
+    </form>
+    <button id="number-item-button">+</button>
    
 
     <h3>GRAINS/LEGUMES/NUTS/SEEDS</h3>
-    <button id="add-item-button">+</button>
+    <form action="/grocery-list" method="POST">
+        <input type="text" placeholder="Add Item" name="pantry">
+    </form>
+    <button id="number-item-button">+</button>
    
 
     <h3>FATS/SPICES/COND</h3>
-    <button id="add-item-button">+</button>
+    <form action="/grocery-list" method="POST">
+        <input type="text" placeholder="Add Item" name="condiments">
+    </form>
+    <button id="number-item-button">+</button>
  
 
     <h3>OTHER</h3>
-    <button id="add-item-button">+</button>
+    <form action="/grocery-list" method="POST">
+        <input type="text" placeholder="Add Item" name="other">
+    </form>
+    <button id="-item-button">+</button>
     
     <script src="/main.js"></script>
 </body>
