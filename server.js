@@ -24,7 +24,7 @@ app.use(express.json())
 
 // MEAL PLAN
 
-
+// mongodb user and pw: mpgl, chrisandphil
 
 
 
