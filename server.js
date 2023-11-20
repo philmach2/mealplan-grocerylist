@@ -36,7 +36,9 @@ app.get('/grocery-list', (req, res) => {
     res.render('grocery-list.ejs')
 })
 
-
+app.post('/grocery-list', (req,res) => {
+    console.log('testttiinnnngggg')
+})
 
 
 
