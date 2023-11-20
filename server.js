@@ -29,6 +29,13 @@ app.use(express.json())
 
 
 // GROCERY LIST
+//get request responds with the rendering of <SPECIFIED>.ejs file
+app.get('/grocery-list', (req, res) => {
+    res.render('grocery-list.ejs')
+})
+
+
+
 
 
 //using environment variable for port
