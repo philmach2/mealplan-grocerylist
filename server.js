@@ -1,5 +1,4 @@
 const express = require('express')
-const { ReturnDocument } = require('mongodb')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config({path: './config/.env'})
@@ -38,14 +37,14 @@ MongoClient.connect(dbConnectionStr)
     app.post('/grocery-list', (req,res) => {
         groceryListCollection
         .insertOne(req.body)
-        .then(result => {
+        .then(results => {
             res.redirect('/grocery-list')
         })
         .catch(error => console.error(error))
     })
 
 
-    // Server Connect
+    // SERVER CONNECT
     app.listen(process.env.PORT, () => {
         console.log('Server is running, you better catch it!')
     })  

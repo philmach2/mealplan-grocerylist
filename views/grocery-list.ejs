@@ -13,6 +13,7 @@
     <h3>FRUIT/VEGETABLE</h3>
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="produce">
+        <button type="submit">Add</button>
     </form>
 
     <ul class="items">
@@ -24,13 +25,12 @@
             <% } %>
         <% } %>
     </ul>
-
-    <button id="number-item-button">+</button>
    
-
+    
     <h3>PROTEIN</h3>
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="protein">
+        <button type="submit">Add</button>
     </form>
     <ul class="items">
         <% for(let i = 0; i < groceryListItems.length; i++) { %>
@@ -41,13 +41,12 @@
             <% } %>
         <% } %>
     </ul>
-
-    <button id="number-item-button">+</button>
    
 
     <h3>GRAINS/LEGUMES/NUTS/SEEDS</h3>
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="pantry">
+        <button type="submit">Add</button>
     </form>
 
     <ul class="items">
@@ -59,13 +58,12 @@
       <% } %>  
     <% } %>
     </ul>
-
-    <button id="number-item-button">+</button>
    
 
     <h3>FATS/SPICES/COND</h3>
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="condiments">
+        <button type="submit">Add</button>
     </form>
 
     <ul class="items">
@@ -77,13 +75,12 @@
           <% } %>  
         <% } %>
     </ul>
-
-    <button id="number-item-button">+</button>
  
 
     <h3>OTHER</h3>
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="other">
+        <button type="submit">Add</button>
     </form>
 
     <ul class="items">
@@ -95,8 +92,6 @@
           <% } %>  
         <% } %>
     </ul>
-
-    <button id="-item-button">+</button>
     
     <script src="/main.js"></script>
 </body>
