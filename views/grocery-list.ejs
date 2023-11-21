@@ -14,6 +14,17 @@
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="produce">
     </form>
+
+    <ul class="items">
+        <% for(let i = 0; i < groceryListItems.length; i++) { %>
+            <% if(groceryListItems[i].produce) { %>
+            <li class="item">
+                <span><%= groceryListItems[i].produce %></span>
+            </li>
+            <% } %>
+        <% } %>
+    </ul>
+
     <button id="number-item-button">+</button>
    
 
@@ -21,6 +32,16 @@
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="protein">
     </form>
+    <ul class="items">
+        <% for(let i = 0; i < groceryListItems.length; i++) { %>
+           <% if(groceryListItems[i].protein) { %> 
+            <li class="item">
+                <span><%= groceryListItems[i].protein %></span>
+            </li>
+            <% } %>
+        <% } %>
+    </ul>
+
     <button id="number-item-button">+</button>
    
 
@@ -28,6 +49,17 @@
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="pantry">
     </form>
+
+    <ul class="items">
+    <% for(let i = 0; i < groceryListItems.length; i++) { %>
+        <% if(groceryListItems[i].pantry) { %>
+            <li class="item">
+                <span><%= groceryListItems[i].pantry %></span>
+            </li>
+      <% } %>  
+    <% } %>
+    </ul>
+
     <button id="number-item-button">+</button>
    
 
@@ -35,6 +67,17 @@
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="condiments">
     </form>
+
+    <ul class="items">
+        <% for(let i = 0; i < groceryListItems.length; i++) { %>
+            <% if(groceryListItems[i].condiments) { %>
+                <li class="item">
+                    <span><%= groceryListItems[i].condiments %></span>
+                </li>
+          <% } %>  
+        <% } %>
+    </ul>
+
     <button id="number-item-button">+</button>
  
 
@@ -42,6 +85,17 @@
     <form action="/grocery-list" method="POST">
         <input type="text" placeholder="Add Item" name="other">
     </form>
+
+    <ul class="items">
+        <% for(let i = 0; i < groceryListItems.length; i++) { %>
+            <% if(groceryListItems[i].other) { %>
+                <li class="item">
+                    <span><%= groceryListItems[i].other %></span>
+                </li>
+          <% } %>  
+        <% } %>
+    </ul>
+
     <button id="-item-button">+</button>
     
     <script src="/main.js"></script>

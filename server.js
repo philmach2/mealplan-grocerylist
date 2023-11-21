@@ -1,4 +1,5 @@
 const express = require('express')
+const { ReturnDocument } = require('mongodb')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config({path: './config/.env'})
@@ -17,7 +18,7 @@ MongoClient.connect(dbConnectionStr)
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
         //to access grocery-list-collection in DB
-        groceryListCollection = db.collection('entries')
+        groceryListCollection = db.collection('grocery-list-collection')
 
     // MEAL PLAN
     app.get('/meal-plan', (req, res) => {
@@ -27,11 +28,20 @@ MongoClient.connect(dbConnectionStr)
 
     // GROCERY LIST
     app.get('/grocery-list', (req, res) => {
-        res.render('grocery-list.ejs')
+        groceryListCollection.find().toArray()
+        .then(results => {
+            res.render('grocery-list.ejs', { groceryListItems: results })
+        })
+        .catch(error => console.error(error))
     })
 
     app.post('/grocery-list', (req,res) => {
-        console.log(req.body)
+        groceryListCollection
+        .insertOne(req.body)
+        .then(result => {
+            res.redirect('/grocery-list')
+        })
+        .catch(error => console.error(error))
     })
 
 
@@ -40,3 +50,4 @@ MongoClient.connect(dbConnectionStr)
         console.log('Server is running, you better catch it!')
     })  
 }) 
+.catch(console.error)
