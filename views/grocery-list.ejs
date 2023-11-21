@@ -21,6 +21,7 @@
             <% if(groceryListItems[i].produce) { %>
             <li class="item">
                 <span><%= groceryListItems[i].produce %></span>
+                <button id="number-item-button">+</button>
             </li>
             <% } %>
         <% } %>
@@ -37,6 +38,7 @@
            <% if(groceryListItems[i].protein) { %> 
             <li class="item">
                 <span><%= groceryListItems[i].protein %></span>
+                <button id="number-item-button">+</button>
             </li>
             <% } %>
         <% } %>
@@ -54,6 +56,7 @@
         <% if(groceryListItems[i].pantry) { %>
             <li class="item">
                 <span><%= groceryListItems[i].pantry %></span>
+                <button id="number-item-button">+</button>
             </li>
       <% } %>  
     <% } %>
@@ -71,6 +74,7 @@
             <% if(groceryListItems[i].condiments) { %>
                 <li class="item">
                     <span><%= groceryListItems[i].condiments %></span>
+                    <button id="number-item-button">+</button>
                 </li>
           <% } %>  
         <% } %>
@@ -88,6 +92,7 @@
             <% if(groceryListItems[i].other) { %>
                 <li class="item">
                     <span><%= groceryListItems[i].other %></span>
+                    <button id="number-item-button">+</button>
                 </li>
           <% } %>  
         <% } %>
