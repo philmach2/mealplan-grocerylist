@@ -18,10 +18,28 @@ MongoClient.connect(dbConnectionStr)
         db = client.db(dbName)
         //to access grocery-list-collection in DB
         groceryListCollection = db.collection('grocery-list-collection')
+        mealPLanCollection = db.collection('meal-plan-collection')
 
     // MEAL PLAN
     app.get('/meal-plan', (req, res) => {
+        db.collection('meal-plan-collection')
+            .find()
+            .toArray()
+            .then(results => {
+                console.table(results)
+                // res.render('meal-plan.ejs', { mplan: results})
+            })
+            .catch(error => console.error(error))
+
         res.render('meal-plan.ejs')
+    })
+
+    app.post('/monday-form', (req, res) => {
+        mealPLanCollection.insertOne(req.body)
+            .then(result => {
+                res.redirect('/meal-plan')
+            })
+            .catch(error => console.error(error))
     })
 
 
