@@ -11,7 +11,7 @@
     <h2><a href="meal-plan">Meal Plan</a></h2>
 
     <h3>FRUIT/VEGETABLE</h3>
-    <form action="/grocery-list" method="POST">
+    <form action="/addGrocery" method="POST">
         <input type="text" placeholder="Add Item" name="produce">
         <button type="submit">Add</button>
     </form>
@@ -21,6 +21,7 @@
             <% if(groceryListItems[i].produce) { %>
             <li class="item">
                 <span><%= groceryListItems[i].produce %></span>
+                <button id="number-item-button">+</button>
             </li>
             <% } %>
         <% } %>
@@ -28,7 +29,7 @@
    
     
     <h3>PROTEIN</h3>
-    <form action="/grocery-list" method="POST">
+    <form action="/addGrocery" method="POST">
         <input type="text" placeholder="Add Item" name="protein">
         <button type="submit">Add</button>
     </form>
@@ -37,6 +38,7 @@
            <% if(groceryListItems[i].protein) { %> 
             <li class="item">
                 <span><%= groceryListItems[i].protein %></span>
+                <button id="number-item-button">+</button>
             </li>
             <% } %>
         <% } %>
@@ -44,7 +46,7 @@
    
 
     <h3>GRAINS/LEGUMES/NUTS/SEEDS</h3>
-    <form action="/grocery-list" method="POST">
+    <form action="/addGrocery" method="POST">
         <input type="text" placeholder="Add Item" name="pantry">
         <button type="submit">Add</button>
     </form>
@@ -54,6 +56,7 @@
         <% if(groceryListItems[i].pantry) { %>
             <li class="item">
                 <span><%= groceryListItems[i].pantry %></span>
+                <button id="number-item-button">+</button>
             </li>
       <% } %>  
     <% } %>
@@ -61,7 +64,7 @@
    
 
     <h3>FATS/SPICES/COND</h3>
-    <form action="/grocery-list" method="POST">
+    <form action="/addGrocery" method="POST">
         <input type="text" placeholder="Add Item" name="condiments">
         <button type="submit">Add</button>
     </form>
@@ -71,6 +74,7 @@
             <% if(groceryListItems[i].condiments) { %>
                 <li class="item">
                     <span><%= groceryListItems[i].condiments %></span>
+                    <button id="number-item-button">+</button>
                 </li>
           <% } %>  
         <% } %>
@@ -78,7 +82,7 @@
  
 
     <h3>OTHER</h3>
-    <form action="/grocery-list" method="POST">
+    <form action="/addGrocery" method="POST">
         <input type="text" placeholder="Add Item" name="other">
         <button type="submit">Add</button>
     </form>
@@ -88,6 +92,7 @@
             <% if(groceryListItems[i].other) { %>
                 <li class="item">
                     <span><%= groceryListItems[i].other %></span>
+                    <button id="number-item-button">+</button>
                 </li>
           <% } %>  
         <% } %>

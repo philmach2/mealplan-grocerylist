@@ -52,7 +52,7 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     })
 
-    app.post('/grocery-list', (req,res) => {
+    app.post('/addGrocery', (req,res) => {
         groceryListCollection
         .insertOne(req.body)
         .then(results => {
