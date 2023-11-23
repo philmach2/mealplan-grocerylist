@@ -17,33 +17,96 @@
       <button type="submit">Submit</button>
     </form> -->
     <br>
+
     <h3>Monday</h3>
+    <ul>
+      <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+
+        <% if (mealPlanStuff[i].mondaymeal) {%>
+          <li>
+            <span><%= mealPlanStuff[i].mondaymeal %></span>
+          </li>
+        <% } %>
+      
+      <% } %>
+    </ul>
+
     <form action="/meal-plan-form" method="POST">
-      <input type="text" placeholder="monday-meal" name="monday-meal" />
+      <input type="text" placeholder="monday-meal" name="mondaymeal" />
       <button type="submit">Add</button>
     </form>
+
 
     <h3>Tuesday</h3>
+    <ul>
+      <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+
+        <% if (mealPlanStuff[i].tuesdaymeal) {%>
+          <li>
+            <span><%= mealPlanStuff[i].tuesdaymeal %></span>
+          </li>
+        <% } %>
+      
+      <% } %>
+    </ul>
+
     <form action="/meal-plan-form" method="POST">
-      <input type="text" placeholder="Tuesday-meal" name="Tuesday-meal" />
+      <input type="text" placeholder="Tuesday-meal" name="tuesdaymeal" />
       <button type="submit">Add</button>
     </form>
+
 
     <h3>Wednesday</h3>
+    <ul>
+      <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+
+        <% if (mealPlanStuff[i].wednesdaymeal) {%>
+          <li>
+            <span><%= mealPlanStuff[i].wednesdaymeal %></span>
+          </li>
+        <% } %>
+      
+      <% } %>
+    </ul>
+
     <form action="/meal-plan-form" method="POST">
-      <input type="text" placeholder="Wednesday-meal" name="Wednesday-meal" />
+      <input type="text" placeholder="Wednesday-meal" name="wednesdaymeal" />
       <button type="submit">Add</button>
     </form>
 
+
     <h3>Thursday</h3>
+    <ul>
+      <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+
+        <% if (mealPlanStuff[i].thursdaymeal) {%>
+          <li>
+            <span><%= mealPlanStuff[i].thursdaymeal %></span>
+          </li>
+        <% } %>
+      
+      <% } %>
+    </ul>
+
     <form action="/meal-plan-form" method="POST">
-      <input type="text" placeholder="Thursday-meal" name="Thursday-meal" />
+      <input type="text" placeholder="Thursday-meal" name="thursdaymeal" />
       <button type="submit">Add</button>
     </form>
 
     <h3>Friday</h3>
+    <ul>
+      <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+
+        <% if (mealPlanStuff[i].fridaymeal) {%>
+          <li>
+            <span><%= mealPlanStuff[i].fridaymeal %></span>
+          </li>
+        <% } %>
+      
+      <% } %>
+    </ul>
     <form action="/meal-plan-form" method="POST">
-      <input type="text" placeholder="Friday-meal" name="Friday-meal" />
+      <input type="text" placeholder="Friday-meal" name="fridaymeal" />
       <button type="submit">Add</button>
     </form>
 
