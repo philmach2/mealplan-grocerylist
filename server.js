@@ -34,7 +34,7 @@ MongoClient.connect(dbConnectionStr)
         res.render('meal-plan.ejs')
     })
 
-    app.post('/monday-form', (req, res) => {
+    app.post('/meal-plan-form', (req, res) => {
         mealPLanCollection.insertOne(req.body)
             .then(result => {
                 res.redirect('/meal-plan')
