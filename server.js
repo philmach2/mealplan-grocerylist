@@ -27,11 +27,11 @@ MongoClient.connect(dbConnectionStr)
             .toArray()
             .then(results => {
                 console.table(results)
-                // res.render('meal-plan.ejs', { mplan: results})
+                res.render('meal-plan.ejs', { mealPlanStuff: results })
             })
             .catch(error => console.error(error))
 
-        res.render('meal-plan.ejs')
+        // res.render('meal-plan.ejs')
     })
 
     app.post('/meal-plan-form', (req, res) => {
