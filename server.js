@@ -53,14 +53,30 @@ MongoClient.connect(dbConnectionStr)
     })
 
     app.post('/addGrocery', (req,res) => {
-        groceryListCollection
-        .insertOne(req.body)
+        groceryListCollection.insertOne(req.body)
         .then(results => {
             res.redirect('/grocery-list')
         })
         .catch(error => console.error(error))
     })
 
+    // need to figure out how to add num and sub num of items, both for db and page
+    app.put('/addNumOfItem', (req, res) => {
+        groceryListCollection.updateOne({
+            likes: request.body.likesS},
+            { 
+                $set: { likes: request.body.likesS + 1 } 
+            },{ 
+                sort: { _id: -1 },
+                upsert: true
+            })
+        .then(result => {
+            console.log('Increased Number of Item')
+            response.json('Number of Item Increased')
+        })
+        .catch(error => console.error(error))
+    
+    })
 
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
