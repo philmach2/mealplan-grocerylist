@@ -12,15 +12,16 @@
 
     <h3>FRUIT/VEGETABLE</h3>
     <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="produce">
+        <input type="text" placeholder="Add Item" name="itemName">
+        <input type="hidden" name="category" value="produce">
         <button type="submit">Add</button>
     </form>
 
     <ul class="items">
         <% for(let i = 0; i < groceryListItems.length; i++) { %>
-            <% if(groceryListItems[i].produce) { %>
+            <% if(groceryListItems[i].category === 'produce') { %>
             <li class="item">
-                <span><%= groceryListItems[i].produce %></span>
+                <span><%= groceryListItems[i].itemName %></span>
                 <button id="add-num-button">+</button>
                 <button id="sub-num-button">-</button>
             </li>
@@ -31,14 +32,15 @@
     
     <h3>PROTEIN</h3>
     <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="protein">
+        <input type="text" placeholder="Add Item" name="itemName">
+        <input type="hidden" name="category" value="protein">
         <button type="submit">Add</button>
     </form>
     <ul class="items">
         <% for(let i = 0; i < groceryListItems.length; i++) { %>
-           <% if(groceryListItems[i].protein) { %> 
+           <% if(groceryListItems[i].category === 'protein') { %> 
             <li class="item">
-                <span><%= groceryListItems[i].protein %></span>
+                <span><%= groceryListItems[i].itemName %></span>
                 <button id="add-num-button">+</button>
                 <button id="sub-num-button">-</button>
             </li>
@@ -49,15 +51,16 @@
 
     <h3>GRAINS/LEGUMES/NUTS/SEEDS</h3>
     <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="pantry">
+        <input type="text" placeholder="Add Item" name="itemName">
+        <input type="hidden" name="category" value="pantry">
         <button type="submit">Add</button>
     </form>
 
     <ul class="items">
     <% for(let i = 0; i < groceryListItems.length; i++) { %>
-        <% if(groceryListItems[i].pantry) { %>
+        <% if(groceryListItems[i].category === 'pantry') { %>
             <li class="item">
-                <span><%= groceryListItems[i].pantry %></span>
+                <span><%= groceryListItems[i].itemName %></span>
                 <button id="add-num-button">+</button>
                 <button id="sub-num-button">-</button>
             </li>
@@ -68,15 +71,16 @@
 
     <h3>FATS/SPICES/COND</h3>
     <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="condiments">
+        <input type="text" placeholder="Add Item" name="itemName">
+        <input type="hidden" name="category" value="condiments">
         <button type="submit">Add</button>
     </form>
 
     <ul class="items">
         <% for(let i = 0; i < groceryListItems.length; i++) { %>
-            <% if(groceryListItems[i].condiments) { %>
+            <% if(groceryListItems[i].category === 'condiments') { %>
                 <li class="item">
-                    <span><%= groceryListItems[i].condiments %></span>
+                    <span><%= groceryListItems[i].itemName %></span>
                     <button id="add-num-button">+</button>
                     <button id="sub-num-button">-</button>
                 </li>
@@ -87,15 +91,16 @@
 
     <h3>OTHER</h3>
     <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="other">
+        <input type="text" placeholder="Add Item" name="itemName">
+        <input type="hidden" name="category" value="other">
         <button type="submit">Add</button>
     </form>
 
     <ul class="items">
         <% for(let i = 0; i < groceryListItems.length; i++) { %>
-            <% if(groceryListItems[i].other) { %>
+            <% if(groceryListItems[i].category === 'other') { %>
                 <li class="item">
-                    <span><%= groceryListItems[i].other %></span>
+                    <span><%= groceryListItems[i].itemName %></span>
                     <button id="add-num-button">+</button>
                     <button id="sub-num-button">-</button>
                 </li>
