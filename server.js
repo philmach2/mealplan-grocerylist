@@ -62,14 +62,11 @@ MongoClient.connect(dbConnectionStr)
 
     // need to figure out how to add num and sub num of items, both for db and page
     app.put('/addNum', (req, res) => {
-        groceryListCollection.updateOne({
-            numItem: req.body.numItem},
-            { 
-                $set: { numItem: req.body.numItem + 1 } 
-            },{ 
-                // sort: { _id: -1 },
-                upsert: true
-            })
+        console.log('Received PUT request:', req.body);
+        groceryListCollection.updateOne(
+            { itemName: req.body.itemName },
+            { $set: { numItem: Number(req.body.numItem) + 1 } },
+        )
         .then(result => {
             console.log('Increased Number of Item')
             res.json('Number of Item Increased')
