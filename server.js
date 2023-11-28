@@ -74,6 +74,20 @@ MongoClient.connect(dbConnectionStr)
     
     })
 
+    app.put('/subNum', (req, res) => {
+        console.log('Received PUT request:', req.body);
+        groceryListCollection.updateOne(
+            { itemName: req.body.itemName },
+            { $set: { numItem: Number(req.body.numItem) - 1 } },
+        )
+        .then(result => {
+            console.log('Decreased Number of Item')
+            res.json('Number of Item Decreased')
+        })
+        .catch(error => console.error(error))
+    
+    })
+
 
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
