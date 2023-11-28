@@ -7,32 +7,17 @@ Array.from(increase).forEach((element)=>{
     element.addEventListener('click', addNumOfItem)
 })
 
-// Array.from(decrease).forEach((element)=>{
-//     element.addEventListener('click', subNumOfItem)
-// })
-
-// addNumOfItem.addEventListener('click', _ => {
-//     const itemCategory = 
-//     fetch('/addNum', {
-//         method: 'put',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             // numItem: tLikes
-//         })
-//     })
-// })
-
-
 async function addNumOfItem(){
-    const itemName = this.parentNode.childNodes[1].innerText
-    const numItem = Number(this.parentNode.childNodes[5].innerText)
+    const itemNameS = this.parentNode.querySelector('.item-name').innerText
+    const numItemS = this.parentNode.querySelector('.num-of-item').innerText
+    console.log('numItemS:', numItemS);
     try{
         const response = await fetch('addNum', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemName': itemName,
-              'numItem': numItem
+              'itemName': itemNameS,
+              'numItem': numItemS
             })
           })
         const data = await response.json()
@@ -43,13 +28,3 @@ async function addNumOfItem(){
         console.log(err)
     }
 }
-
-// subNumOfItem.addEventListener('click', _ => {
-//     fetch('/subNum', {
-//         method: 'put',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-            
-//         })
-//     })
-// })
