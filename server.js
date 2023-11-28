@@ -78,6 +78,10 @@ MongoClient.connect(dbConnectionStr)
     
     })
 
+    // I want a place to put the number in ejs
+    // I want a put request sent to the number to be applied and increased
+    // If it is 2 or greater, I want it to appear on screen, less than hidden
+
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
         console.log('Server is running, you better catch it!')
