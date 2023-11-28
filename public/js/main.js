@@ -1,10 +1,12 @@
-// need to figure out how to add num and sub num of items, both for data in db and text on page
-
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
 
-Array.from(increase).forEach((element)=>{
+Array.from(increase).forEach(element => {
     element.addEventListener('click', addNumOfItem)
+})
+
+Array.from(decrease).forEach(element => {
+    element.addEventListener('click', subNumOfItem)
 })
 
 async function addNumOfItem(){
