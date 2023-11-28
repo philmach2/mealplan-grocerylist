@@ -30,3 +30,25 @@ async function addNumOfItem(){
         console.log(err)
     }
 }
+
+async function subNumOfItem(){
+    const itemNameS = this.parentNode.querySelector('.item-name').innerText
+    const numItemS = this.parentNode.querySelector('.num-of-item').innerText
+    console.log('numItemS:', numItemS);
+    try{
+        const response = await fetch('subNum', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              'itemName': itemNameS,
+              'numItem': numItemS
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+
+    }catch(err){
+        console.log(err)
+    }
+}
