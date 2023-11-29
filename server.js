@@ -51,6 +51,7 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     })
 
+
     //Add item to list
     app.post('/addGrocery', (req,res) => {
         groceryListCollection.insertOne(req.body)
@@ -59,6 +60,7 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch(error => console.error(error))
     })
+
 
     //Increase number of items
     app.put('/addNum', (req, res) => {
@@ -74,6 +76,7 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     
     })
+
 
     //Decrease number of items
     app.put('/subNum', (req, res) => {
@@ -92,6 +95,7 @@ MongoClient.connect(dbConnectionStr)
     })
 
 
+    //Mark item complete
     app.put('/markComplete', (request, response) => {
         groceryListCollection
         .updateOne(
@@ -101,6 +105,21 @@ MongoClient.connect(dbConnectionStr)
           .then((result) => {
             console.log('Marked Complete');
             response.json('Marked Complete'); 
+          })
+          .catch((error) => console.error(error));
+      });
+
+
+      //Mark item incomplete
+      app.put('/markIncomplete', (request, response) => {
+        groceryListCollection
+        .updateOne(
+            { itemName: request.body.itemFromJS },
+            { $set: { complete: false, }, },
+        )
+          .then((result) => {
+            console.log('Marked Incomplete');
+            response.json('Marked Incomplete'); 
           })
           .catch((error) => console.error(error));
       });
