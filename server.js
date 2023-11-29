@@ -16,7 +16,6 @@ MongoClient.connect(dbConnectionStr)
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
-        //to access grocery-list-collection in DB
         groceryListCollection = db.collection('grocery-list-collection')
         mealPLanCollection = db.collection('meal-plan-collection')
 
@@ -52,6 +51,7 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     })
 
+    //Add item to list
     app.post('/addGrocery', (req,res) => {
         groceryListCollection.insertOne(req.body)
         .then(results => {
@@ -60,6 +60,7 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     })
 
+    //Increase number of items
     app.put('/addNum', (req, res) => {
         console.log('Received PUT request:', req.body);
         groceryListCollection.updateOne(
@@ -74,9 +75,11 @@ MongoClient.connect(dbConnectionStr)
     
     })
 
+    //Decrease number of items
     app.put('/subNum', (req, res) => {
         console.log('Received PUT request:', req.body);
-        groceryListCollection.updateOne(
+        groceryListCollection
+        .updateOne(
             { itemName: req.body.itemName },
             { $set: { numItem: Number(req.body.numItem) - 1 } },
         )
@@ -87,6 +90,20 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     
     })
+
+
+    app.put('/markComplete', (request, response) => {
+        groceryListCollection
+        .updateOne(
+            { itemName: request.body.itemFromJS },
+            { $set: { complete: true, }, },
+        )
+          .then((result) => {
+            console.log('Marked Complete');
+            response.json('Marked Complete'); 
+          })
+          .catch((error) => console.error(error));
+      });
 
 
     // SERVER CONNECT
