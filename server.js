@@ -35,12 +35,23 @@ MongoClient.connect(dbConnectionStr)
     })
 
     app.post('/meal-plan-form', (req, res) => {
-        mealPLanCollection.insertOne(req.body)
+        mealPlanCollection.insertOne(req.body)
             .then(result => {
                 res.redirect('/meal-plan')
             })
             .catch(error => console.error(error))
     })
+
+    app.delete('/meal-plan', (request, response) => {
+        mealPlanCollection.deleteOne({thing: request.body.itemFromJS})
+        .then(result => {
+            console.log('Todo Deleted')
+            response.json('Todo Deleted')
+        })
+        .catch(error => console.error(error))
+    
+    })
+
 
 
     // GROCERY LIST
