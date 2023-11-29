@@ -18,7 +18,7 @@ MongoClient.connect(dbConnectionStr)
         db = client.db(dbName)
         //to access grocery-list-collection in DB
         groceryListCollection = db.collection('grocery-list-collection')
-        mealPLanCollection = db.collection('meal-plan-collection')
+        mealPlanCollection = db.collection('meal-plan-collection')
 
     // MEAL PLAN
     app.get('/meal-plan', (req, res) => {
@@ -42,8 +42,9 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
 
-    app.delete('/meal-plan', (request, response) => {
-        mealPlanCollection.deleteOne({thing: request.body.itemFromJS})
+    app.delete('/deleteItem', (request, response) => {
+        // mondaymeal: this is the property that you would like to delete
+        mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
         .then(result => {
             console.log('Todo Deleted')
             response.json('Todo Deleted')
