@@ -1,16 +1,17 @@
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
-const item = document.querySelectorAll('.item span')
+const complete = document.querySelectorAll('.item span')
+const incomplete = document.querySelectorAll('.item span.complete')
 
 // const itemCompleted = document.querySelectorAll('.item span.completed')
 // const deleteBtn = document.querySelectorAll('.fa-trash')
 
-// Array.from(deleteBtn).forEach((element)=>{
-//     element.addEventListener('click', deleteItem)
-// })
-
-Array.from(item).forEach((element)=>{
+Array.from(complete).forEach((element)=>{
     element.addEventListener('click', markComplete)
+})
+
+Array.from(incomplete).forEach((element)=>{
+    element.addEventListener('click', markIncomplete)
 })
 
 // Array.from(itemCompleted).forEach((element)=>{
@@ -73,6 +74,25 @@ async function markComplete(){
     const itemText = this.parentNode.childNodes[1].innerText
     try{
         const response = await fetch('markComplete', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'itemFromJS': itemText
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function markIncomplete(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    try{
+        const response = await fetch('markIncomplete', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
