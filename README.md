@@ -23,7 +23,7 @@ By employing **‘async/await’**, we were able to streamline the handling of d
 
 Initially, we managed numerous PUT requests using forms. However, when shifting the focus to enhancing the user experience, we transitioned to handling these requests through JavaScript. This shift resulted in more robust manipulations on both the client and server code, but greatly enhanced the overall user experience. 
 
-(img)
+![ray-so-export (2)](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/3063720e-b5af-4f02-ab2e-3de11bd54851)
 
 Additionally, we began by using 'parent-nodes' and 'child-nodes' to target elements in the DOM. However, this approach grew more complex and difficult to read in the codebase. Simplifying our strategy, we leveraged a few more classes on specified elements, resulting in significantly improved code readability.
 
