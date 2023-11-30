@@ -11,7 +11,7 @@ In developing this web application, our primary emphasis was on functionality. T
 
 We employed **MongoDB** to manage JavaScript objects seamlessly. Our database is structured with two collections: one for the users' meal plan and another for their grocery list. We enhanced our POST method by incorporating forms, aiming to produce well-organized documents that can be effortlessly manipulated.
 
-(img)
+![ray-so-export](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/1fdc8d2c-124e-440f-b75e-703e0dd32131)
 
 By employing **‘async/await’**, we were able to streamline the handling of database queries, API requests, and enhance the overall readability and maintainability of our web application. 
 
