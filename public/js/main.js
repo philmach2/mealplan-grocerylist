@@ -37,12 +37,6 @@ Array.from(deleteBtn).forEach((element)=>{
     element.addEventListener('click', deleteItem)
 })
 
-// I was able to get this to work when i comment out the async function deleteItem. So i know the event listeners are being added
-// function deleteItem() {
-//     console.log('hello')
-// }
-
-
 async function deleteItem(){
     const itemText = this.parentNode.childNodes[1].innerText
     try{
