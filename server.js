@@ -43,13 +43,58 @@ MongoClient.connect(dbConnectionStr)
 
     app.delete('/deleteItem', (request, response) => {
         // mondaymeal: this is the property that you would like to delete
+        // the below line of code works for the trash cans on Monday
+        // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
         mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
-        .then(result => {
-            console.log('Meal Deleted')
-            response.json('Meal Deleted')
-        })
-        .catch(error => console.error(error))
-    
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+        
+        mealPlanCollection.deleteOne({tuesdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+
+        mealPlanCollection.deleteOne({wednesdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+
+
+        mealPlanCollection.deleteOne({thursdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+
+        mealPlanCollection.deleteOne({fridaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+
+        mealPlanCollection.deleteOne({saturdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+
+        mealPlanCollection.deleteOne({sundaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+
     })
 
 

@@ -82,6 +82,8 @@
 
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+
+            <!-- Monday Start -->
             <div class="relative pl-16">
               <dt class="text-base font-semibold leading-7 text-gray-900">
                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
@@ -92,12 +94,17 @@
                 Monday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Monday meal" name="mondaymeal" />
+                  <input type="hidden" name="weekday" value="monday">
+                  <button type="submit">Add</button>
+                </form>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
                     <% if (mealPlanStuff[i].mondaymeal) {%>
                       <li>
-                        <span><%= mealPlanStuff[i].mondaymeal %></span> &nbsp <!-- <button id="<%= i %>">delete</button> -->
+                        <span><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                         <span class='fa fa-trash'></span>
                       </li>
                     <% } %>
@@ -105,13 +112,11 @@
                   <% } %>
                 </ul>
             
-                <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="monday-meal" name="mondaymeal" />
-                  <input type="hidden" name="weekday" value="monday">
-                  <button type="submit">Add</button>
-                </form>
               </dd>
             </div>
+            <!-- Monday End -->
+
+            <!-- Tuesday Start -->
             <div class="relative pl-16">
               <dt class="text-base font-semibold leading-7 text-gray-900">
                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
@@ -119,10 +124,32 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                   </svg>
                 </div>
-                SSL certificates
+                Tuesday
               </dt>
-              <dd class="mt-2 text-base leading-7 text-gray-600">Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.</dd>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Tuesday meal" name="tuesdaymeal" />
+                  <input type="hidden" name="weekday" value="tuesday">
+                  <button type="submit">Add</button>
+                </form>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+            
+                    <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                      <li>
+                        <span><%= mealPlanStuff[i].tuesdaymeal %></span>  &nbsp
+                        <span class='fa fa-trash'></span>
+                      </li>
+                    <% } %>
+                  
+                  <% } %>
+                </ul>
+            
+              </dd>
             </div>
+            <!-- Tuesday End -->
+            
+            <!-- Wednesday Start -->
             <div class="relative pl-16">
               <dt class="text-base font-semibold leading-7 text-gray-900">
                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
@@ -130,10 +157,32 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                   </svg>
                 </div>
-                Simple queues
+                Wednesday
               </dt>
-              <dd class="mt-2 text-base leading-7 text-gray-600">Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.</dd>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Wednesday meal" name="wednesdaymeal" />
+                  <input type="hidden" name="weekday" value="wednesday">
+                  <button type="submit">Add</button>
+                </form>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+            
+                    <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                      <li>
+                        <span><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                        <span class="fa fa-trash"></span>
+                      </li>
+                    <% } %>
+                  
+                  <% } %>
+                </ul>
+            
+              </dd>
             </div>
+            <!-- Wednesday End -->
+            
+            <!-- Thursday Start -->
             <div class="relative pl-16">
               <dt class="text-base font-semibold leading-7 text-gray-900">
                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
@@ -141,10 +190,131 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
                   </svg>
                 </div>
-                Advanced security
+                Thursday
               </dt>
-              <dd class="mt-2 text-base leading-7 text-gray-600">Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.</dd>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Thursday meal" name="thursdaymeal" />
+                  <input type="hidden" name="weekday" value="thursday">
+                  <button type="submit">Add</button>
+                </form>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+            
+                    <% if (mealPlanStuff[i].thursdaymeal) {%>
+                      <li>
+                        <span><%= mealPlanStuff[i].thursdaymeal %></span>&nbsp
+                        <span class="fa fa-trash"></span>
+                      </li>
+                    <% } %>
+                  
+                  <% } %>
+                </ul>
+            
+              </dd>
             </div>
+            <!-- Thursday End -->
+
+            <!-- Friday Start -->
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                  </svg>
+                </div>
+                Friday
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Friday meal" name="fridaymeal" />
+                  <input type="hidden" name="weekday" value="friday">
+                  <button type="submit">Add</button>
+                </form>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+            
+                    <% if (mealPlanStuff[i].fridaymeal) {%>
+                      <li>
+                        <span><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                        <span class="fa fa-trash"></span>
+                      </li>
+                    <% } %>
+                  
+                  <% } %>
+                </ul>
+
+              </dd>
+            </div>
+            <!-- Friday End -->
+
+            <!-- Saturday Start -->
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                  </svg>
+                </div>
+                Saturday
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Saturday meal" name="saturdaymeal" />
+                  <input type="hidden" name="weekday" value="saturday">
+                  <button type="submit">Add</button>
+                </form>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+            
+                    <% if (mealPlanStuff[i].saturdaymeal) {%>
+                      <li>
+                        <span><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                        <span class="fa fa-trash"></span>
+                      </li>
+                    <% } %>
+                  
+                  <% } %>
+                </ul>
+
+              </dd>
+            </div>
+            <!-- Saturday End -->
+
+            <!-- Sunday Start -->
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                  </svg>
+                </div>
+                Sunday
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                <form action="/meal-plan-form" method="POST">
+                  <input type="text" placeholder="Sunday meal" name="sundaymeal" />
+                  <input type="hidden" name="weekday" value="sunday">
+                  <button type="submit">Add</button>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+            
+                    <% if (mealPlanStuff[i].sundaymeal) {%>
+                      <li>
+                        <span><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                        <span class="fa fa-trash"></span>
+                      </li>
+                    <% } %>
+                  
+                  <% } %>
+                </ul>
+
+                </form>
+              </dd>
+            </div>
+            <!-- Sunday end -->
+
+
           </dl>
         </div>
 
@@ -169,13 +339,13 @@
 
 
 
-    <h3>Monday</h3>
+    <!-- <h3>Monday</h3>
     <ul>
       <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
 
         <% if (mealPlanStuff[i].mondaymeal) {%>
           <li>
-            <span><%= mealPlanStuff[i].mondaymeal %></span> &nbsp <!-- <button id="<%= i %>">delete</button> -->
+            <span><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
             <span class='fa fa-trash'></span>
           </li>
         <% } %>
@@ -187,10 +357,10 @@
       <input type="text" placeholder="monday-meal" name="mondaymeal" />
       <input type="hidden" name="weekday" value="monday">
       <button type="submit">Add</button>
-    </form>
+    </form> -->
 
 
-    <h3>Tuesday</h3>
+    <!-- <h3>Tuesday</h3>
     <ul>
       <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
 
@@ -207,16 +377,17 @@
       <input type="text" placeholder="Tuesday-meal" name="tuesdaymeal" />
       <input type="hidden" name="weekday" value="tuesday">
       <button type="submit">Add</button>
-    </form>
+    </form> -->
 
 
-    <h3>Wednesday</h3>
+    <!-- <h3>Wednesday</h3>
     <ul>
       <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
 
         <% if (mealPlanStuff[i].wednesdaymeal) {%>
           <li>
-            <span><%= mealPlanStuff[i].wednesdaymeal %></span>
+            <span><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+            <span class="fa fa-trash"></span>
           </li>
         <% } %>
       
@@ -227,16 +398,17 @@
       <input type="text" placeholder="Wednesday-meal" name="wednesdaymeal" />
       <input type="hidden" name="weekday" value="wednesday">
       <button type="submit">Add</button>
-    </form>
+    </form> -->
 
 
-    <h3>Thursday</h3>
+    <!-- <h3>Thursday</h3>
     <ul>
       <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
 
         <% if (mealPlanStuff[i].thursdaymeal) {%>
           <li>
-            <span><%= mealPlanStuff[i].thursdaymeal %></span>
+            <span><%= mealPlanStuff[i].thursdaymeal %></span>&nbsp
+            <span class="fa fa-trash"></span>
           </li>
         <% } %>
       
@@ -247,15 +419,16 @@
       <input type="text" placeholder="Thursday-meal" name="thursdaymeal" />
       <input type="hidden" name="weekday" value="thursday">
       <button type="submit">Add</button>
-    </form>
+    </form> -->
 
-    <h3>Friday</h3>
+    <!-- <h3>Friday</h3>
     <ul>
       <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
 
         <% if (mealPlanStuff[i].fridaymeal) {%>
           <li>
-            <span><%= mealPlanStuff[i].fridaymeal %></span>
+            <span><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+            <span class="fa fa-trash"></span>
           </li>
         <% } %>
       
@@ -265,9 +438,8 @@
       <input type="text" placeholder="Friday-meal" name="fridaymeal" />
       <input type="hidden" name="weekday" value="friday">
       <button type="submit">Add</button>
-    </form>
+    </form> -->
 
-    <script src="./js/main.js"></script>
 
 
     <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
@@ -295,5 +467,6 @@
       </aside>
     </footer>
 
+    <script src="./js/main.js"></script>
 </body>
 </html>
