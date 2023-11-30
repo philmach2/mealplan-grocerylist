@@ -6,7 +6,6 @@ const incomplete = document.querySelectorAll('.item span.complete')
 // const itemCompleted = document.querySelectorAll('.item span.completed')
 // const deleteBtn = document.querySelectorAll('.fa-trash')
 
-<<<<<<< HEAD
 // addNumOfItem.addEventListener('click', _ => {
 //     const itemCategory = 
 //     fetch('/addNum', {
@@ -52,7 +51,19 @@ async function deleteItem(){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
               'itemFromJS': itemText
-=======
+            })
+        })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+
+  }catch(err){
+      console.log(err)
+  }
+}
+
+
+
 Array.from(complete).forEach((element)=>{
     element.addEventListener('click', markComplete)
 })
@@ -84,7 +95,6 @@ async function addNumOfItem(){
             body: JSON.stringify({
               'itemName': itemNameS,
               'numItem': numItemS
->>>>>>> main
             })
           })
         const data = await response.json()
@@ -96,8 +106,6 @@ async function addNumOfItem(){
     }
 }
 
-<<<<<<< HEAD
-=======
 async function subNumOfItem(){
     const itemNameS = this.parentNode.querySelector('.item-name').innerText
     const numItemS = this.parentNode.querySelector('.num-of-item').innerText
@@ -157,4 +165,3 @@ async function markIncomplete(){
         console.log(err)
     }
 }
->>>>>>> main
