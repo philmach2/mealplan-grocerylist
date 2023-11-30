@@ -15,7 +15,7 @@ We employed **MongoDB** to manage JavaScript objects seamlessly. Our database is
 
 By employing **‘async/await’**, we were able to streamline the handling of database queries, API requests, and enhance the overall readability and maintainability of our web application. 
 
-(img)
+![ray-so-export (1)](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/6422d1e3-d0b1-4d40-bd9f-bcaa5762a514)
 
 **Tailwind** proved to be a reliable tool in showcasing our initial MVP (Minimum Viable Product) so that users can begin establishing their weekly meals and grocery shopping while enjoying the aesthetic design.
 
