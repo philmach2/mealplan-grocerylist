@@ -7,9 +7,11 @@
     <!-- not workign for some reason: -->
     <!-- <link href="/dist/output.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<!-- The DaisyUI color theme I selected is called corporate  -->
+
 <!-- Our original code -->
     <!-- <h1 class="text-3xl font-bold underline">Welcome!</h1>
     <h2><a href="meal-plan">Meal Plan</a></h2>
@@ -21,7 +23,7 @@
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
+            <span class="sr-only">Meal Plan Grocery List</span>
             <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
             <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
           </a>
@@ -102,10 +104,30 @@
       </div>
     </div>
   </div>
-  <footer>
-    <div>
+
+  <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
+  <footer class="footer footer-center p-10  text-base-content rounded relative">
+    <nav class="grid grid-flow-col gap-4">
+      <a href="meal-plan" class="link link-hover">Meal Plan</a>
+      <a href="grocery-list" class="link link-hover">Grocery List</a>
+      <!-- <a class="link link-hover">Jobs</a>
+      <a class="link link-hover">Press kit</a> -->
+    </nav> 
+    <nav>
+      <div class="grid grid-flow-col gap-4">
+        <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
+            <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
+          </a>
+      </div>
+    </nav> 
+    <aside>
+      <p>Copyright © 2023 - All rights reserved. Created by <a href="https://philmach.netlify.app/">Phil Mach II</a> and <a href="https://www.chrisnelson.onrender.com">Chris Nelson</a></p>
+      <p>
         <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
-    </div>
+      <p>
+    </aside>
   </footer>
 </body>
 </html>
