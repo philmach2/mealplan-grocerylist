@@ -16,7 +16,6 @@ MongoClient.connect(dbConnectionStr)
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
-        //to access grocery-list-collection in DB
         groceryListCollection = db.collection('grocery-list-collection')
         mealPlanCollection = db.collection('meal-plan-collection')
 
@@ -64,6 +63,8 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     })
 
+
+    //Add item to list
     app.post('/addGrocery', (req,res) => {
         groceryListCollection.insertOne(req.body)
         .then(results => {
@@ -72,23 +73,69 @@ MongoClient.connect(dbConnectionStr)
         .catch(error => console.error(error))
     })
 
-    // need to figure out how to add num and sub num of items, both for db and page
+
+    //Increase number of items
     app.put('/addNum', (req, res) => {
-        groceryListCollection.updateOne({
-            numItem: request.body.numItem},
-            { 
-                $set: { numItem: request.body.numItem + 1 } 
-            },{ 
-                // sort: { _id: -1 },
-                upsert: true
-            })
+        console.log('Received PUT request:', req.body);
+        groceryListCollection.updateOne(
+            { itemName: req.body.itemName },
+            { $set: { numItem: Number(req.body.numItem) + 1 } },
+        )
         .then(result => {
             console.log('Increased Number of Item')
-            response.json('Number of Item Increased')
+            res.json('Number of Item Increased')
         })
         .catch(error => console.error(error))
     
     })
+
+
+    //Decrease number of items
+    app.put('/subNum', (req, res) => {
+        console.log('Received PUT request:', req.body);
+        groceryListCollection
+        .updateOne(
+            { itemName: req.body.itemName },
+            { $set: { numItem: Number(req.body.numItem) - 1 } },
+        )
+        .then(result => {
+            console.log('Decreased Number of Item')
+            res.json('Number of Item Decreased')
+        })
+        .catch(error => console.error(error))
+    
+    })
+
+
+    //Mark item complete
+    app.put('/markComplete', (request, response) => {
+        groceryListCollection
+        .updateOne(
+            { itemName: request.body.itemFromJS },
+            { $set: { complete: true, }, },
+        )
+          .then((result) => {
+            console.log('Marked Complete');
+            response.json('Marked Complete'); 
+          })
+          .catch((error) => console.error(error));
+      });
+
+
+      //Mark item incomplete
+      app.put('/markIncomplete', (request, response) => {
+        groceryListCollection
+        .updateOne(
+            { itemName: request.body.itemFromJS },
+            { $set: { complete: false, }, },
+        )
+          .then((result) => {
+            console.log('Marked Incomplete');
+            response.json('Marked Incomplete'); 
+          })
+          .catch((error) => console.error(error));
+      });
+
 
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
