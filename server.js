@@ -45,8 +45,8 @@ MongoClient.connect(dbConnectionStr)
         // mondaymeal: this is the property that you would like to delete
         mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
         .then(result => {
-            console.log('Todo Deleted')
-            response.json('Todo Deleted')
+            console.log('Meal Deleted')
+            response.json('Meal Deleted')
         })
         .catch(error => console.error(error))
     
