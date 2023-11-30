@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
-    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -16,6 +16,7 @@
         <input type="text" placeholder="Add Item" name="itemName">
         <input type="hidden" name="category" value="produce">
         <input type="hidden" name="numItem" value="1">
+        <input type="hidden" name="complete" value="false">
         <button type="submit">Add</button>
     </form>
 
@@ -23,7 +24,11 @@
         <% for(let i = 0; i < groceryListItems.length; i++) { %>
             <% if(groceryListItems[i].category === 'produce') { %>
             <li class="item">
+                <% if(groceryListItems[i].complete === true) { %>
+                <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                <% }else { %>
                 <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                <% } %>
                 <button id="add-num-button">+</button>
                 <% if(groceryListItems[i].numItem >= 1) { %>
                 <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
@@ -33,6 +38,7 @@
             <% } %>
         <% } %>
     </ul>
+
    
     
     <h3>PROTEIN</h3>
