@@ -1,33 +1,30 @@
-# My Awesome Project
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+# Grocery and Meal Planner
+An all-in-one resource to coordinate your weekly meals and grocery list. 
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
-
-![alt tag](http://placecorgi.com/1200/650)
+Link to project: 
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** Node.js, Express, MongoDB, Tailwind
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+In developing this web application, our primary emphasis was on functionality. This allowed us to focus on **CRUD** operations, data storage, and server-side logic while taking a utility-first approach to styling. 
 
-## Optimizations
-*(optional)*
+We employed **MongoDB** to manage JavaScript objects seamlessly. Our database is structured with two collections: one for the users' meal plan and another for their grocery list. We enhanced our POST method by incorporating forms, aiming to produce well-organized documents that can be effortlessly manipulated.
 
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+![ray-so-export (2)](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/83828870-2e1e-499f-88d7-3834cf29205d)
+
+By employing **‘async/await’**, we were able to streamline the handling of database queries, API requests, and enhance the overall readability and maintainability of our web application. 
+
+![ray-so-export (1)](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/b712a473-9386-4c11-8d77-3cb3a047f7c4)
+
+**Tailwind** proved to be a reliable tool in showcasing our initial MVP (Minimum Viable Product) so that users can begin establishing their weekly meals and grocery shopping while enjoying the aesthetic design.
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *wow I actually did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+Initially, we managed numerous PUT requests using forms. However, when shifting the focus to enhancing the user experience, we transitioned to handling these requests through JavaScript. This shift resulted in more robust manipulations on both the client and server code, but greatly enhanced the overall user experience. 
 
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
+![ray-so-export](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/5c0b32bd-d2fc-43a3-9851-2d235a84f10f)
 
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
-
+Additionally, we began by using 'parent-nodes' and 'child-nodes' to target elements in the DOM. However, this approach grew more complex and difficult to read in the codebase. Simplifying our strategy, we leveraged a few more classes on specified elements, resulting in significantly improved code readability.
 
 
