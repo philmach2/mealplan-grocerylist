@@ -13,6 +13,8 @@
 <body>
 
   <div class="bg-white">
+
+    <!-- Header Start -->
     <header class="absolute inset-x-0 top-0 z-50">
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
@@ -73,14 +75,15 @@
         </div>
       </div>
     </header>
+    <!-- Header End -->
   
     <div class="relative isolate px-6 pt-14 lg:px-8">
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
       </div>
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="mx-auto max-w-2xl py-36 sm:py-30 lg:py-30">
 
-        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <div class="mx-auto mt-16 max-w-2xl lg:max-w-4xl">
           <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
 
             <!-- Monday Start -->
@@ -95,7 +98,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Monday meal" name="mondaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Monday meal" name="mondaymeal" />
                   <input type="hidden" name="weekday" value="monday">
                   <button type="submit">Add</button>
                 </form>
@@ -128,7 +131,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Tuesday meal" name="tuesdaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Tuesday meal" name="tuesdaymeal" />
                   <input type="hidden" name="weekday" value="tuesday">
                   <button type="submit">Add</button>
                 </form>
@@ -161,7 +164,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Wednesday meal" name="wednesdaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Wednesday meal" name="wednesdaymeal" />
                   <input type="hidden" name="weekday" value="wednesday">
                   <button type="submit">Add</button>
                 </form>
@@ -194,7 +197,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Thursday meal" name="thursdaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Thursday meal" name="thursdaymeal" />
                   <input type="hidden" name="weekday" value="thursday">
                   <button type="submit">Add</button>
                 </form>
@@ -227,7 +230,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Friday meal" name="fridaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Friday meal" name="fridaymeal" />
                   <input type="hidden" name="weekday" value="friday">
                   <button type="submit">Add</button>
                 </form>
@@ -260,7 +263,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Saturday meal" name="saturdaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Saturday meal" name="saturdaymeal" />
                   <input type="hidden" name="weekday" value="saturday">
                   <button type="submit">Add</button>
                 </form>
@@ -293,7 +296,7 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input type="text" placeholder="Sunday meal" name="sundaymeal" />
+                  <input class="bg-gray-200" type="text" placeholder="Sunday meal" name="sundaymeal" />
                   <input type="hidden" name="weekday" value="sunday">
                   <button type="submit">Add</button>
                 <ul>
@@ -318,8 +321,6 @@
           </dl>
         </div>
 
-
-
       </div>
       <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
         <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
@@ -330,13 +331,7 @@
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-
   </div>
-
-
-
-
-
 
 
     <!-- <h3>Monday</h3>
@@ -441,7 +436,7 @@
     </form> -->
 
 
-
+    <!-- Footer Start -->
     <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
     <footer class="footer footer-center p-10 text-base-content rounded relative">
       <nav class="grid grid-flow-col gap-4">
@@ -452,7 +447,7 @@
       </nav> 
       <nav>
         <div class="grid grid-flow-col gap-4">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="index.html" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
               <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
               <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
@@ -466,6 +461,8 @@
         <p>
       </aside>
     </footer>
+    <!-- Footer End -->
+
 
     <script src="./js/main.js"></script>
 </body>
