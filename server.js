@@ -19,7 +19,8 @@ MongoClient.connect(dbConnectionStr)
         groceryListCollection = db.collection('grocery-list-collection')
         mealPlanCollection = db.collection('meal-plan-collection')
 
-    // MEAL PLAN
+    // MEAL PLAN Start
+    // Read! Start
     app.get('/meal-plan', (req, res) => {
         db.collection('meal-plan-collection')
             .find()
@@ -29,10 +30,10 @@ MongoClient.connect(dbConnectionStr)
                 res.render('meal-plan.ejs', { mealPlanStuff: results })
             })
             .catch(error => console.error(error))
-
-        // res.render('meal-plan.ejs')
     })
+    // Read! End
 
+    // Create! Start
     app.post('/meal-plan-form', (req, res) => {
         mealPlanCollection.insertOne(req.body)
             .then(result => {
@@ -40,7 +41,43 @@ MongoClient.connect(dbConnectionStr)
             })
             .catch(error => console.error(error))
     })
+    // Create! End
 
+    // Update! Start
+    app.put('/markComplete', (request, response) => {
+        mealPlanCollection.updateOne({thing: request.body.itemFromJS},{
+            $set: {
+                complete: true
+              }
+        },{
+            sort: {_id: -1},
+            upsert: false
+        })
+        .then(result => {
+            console.log('Marked Complete')
+            response.json('Marked Complete')
+        })
+        .catch(error => console.error(error))
+    })
+    
+    app.put('/markUnComplete', (request, response) => {
+        mealPlanCollection.updateOne({thing: request.body.itemFromJS},{
+            $set: {
+                completed: false
+              }
+        },{
+            sort: {_id: -1},
+            upsert: false
+        })
+        .then(result => {
+            console.log('Marked Complete')
+            response.json('Marked Complete')
+        })
+        .catch(error => console.error(error))
+    })
+    // Update! End
+
+    // Delete! Start
     app.delete('/deleteItem', (request, response) => {
         // mondaymeal: this is the property that you would like to delete
         // the below line of code works for the trash cans on Monday
@@ -65,7 +102,6 @@ MongoClient.connect(dbConnectionStr)
                 response.json('Meal Deleted')
             })
             .catch(error => console.error(error))
-
 
         mealPlanCollection.deleteOne({thursdaymeal: request.body.itemFromJS})
             .then(result => {
@@ -94,8 +130,9 @@ MongoClient.connect(dbConnectionStr)
                 response.json('Meal Deleted')
             })
             .catch(error => console.error(error))
-
     })
+    // Delete! End
+    // MEAL PLAN End
 
 
 
