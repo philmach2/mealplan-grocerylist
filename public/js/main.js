@@ -29,7 +29,7 @@ const incomplete = document.querySelectorAll('.item span.complete')
 
 
 // ~~~~~~~~~
-// Meal Plan Delete Functionality
+// Meal Plan Delete Functionality Start
 // ~~~~~~~~~
 const deleteBtn = document.querySelectorAll('.fa-trash')
 
@@ -55,6 +55,9 @@ async function deleteItem(){
       console.log(err)
   }
 }
+// ~~~~~~~~~
+// Meal Plan Delete Functionality End
+// ~~~~~~~~~
 
 
 
@@ -62,9 +65,13 @@ Array.from(complete).forEach((element)=>{
     element.addEventListener('click', markComplete)
 })
 
+console.log('complete: ', Array.from(complete))
+
 Array.from(incomplete).forEach((element)=>{
     element.addEventListener('click', markIncomplete)
 })
+
+console.log('incomplete: ', Array.from(incomplete))
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click', markUnComplete)

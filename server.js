@@ -44,7 +44,7 @@ MongoClient.connect(dbConnectionStr)
     // Create! End
 
     // Update! Start
-    app.put('/markComplete', (request, response) => {
+    app.put('/markCompleteMealPlan', (request, response) => {
         mealPlanCollection.updateOne({thing: request.body.itemFromJS},{
             $set: {
                 complete: true
@@ -54,13 +54,13 @@ MongoClient.connect(dbConnectionStr)
             upsert: false
         })
         .then(result => {
-            console.log('Marked Complete')
-            response.json('Marked Complete')
+            console.log('Marked Complete meal plan')
+            response.json('Marked Complete meal plan')
         })
         .catch(error => console.error(error))
     })
     
-    app.put('/markUnComplete', (request, response) => {
+    app.put('/markUnCompleteMealPlan', (request, response) => {
         mealPlanCollection.updateOne({thing: request.body.itemFromJS},{
             $set: {
                 completed: false
@@ -70,8 +70,8 @@ MongoClient.connect(dbConnectionStr)
             upsert: false
         })
         .then(result => {
-            console.log('Marked Complete')
-            response.json('Marked Complete')
+            console.log('Marked Complete meal plan')
+            response.json('Marked Complete meal plan')
         })
         .catch(error => console.error(error))
     })
