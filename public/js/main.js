@@ -1,7 +1,10 @@
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
-const complete = document.querySelectorAll('.item span')
-const incomplete = document.querySelectorAll('.item span.complete')
+const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
+
+const completeMealPlan = document.querySelectorAll('#meal-plan .item span')
+const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.complete')
 
 // const itemCompleted = document.querySelectorAll('.item span.completed')
 // const deleteBtn = document.querySelectorAll('.fa-trash')
@@ -60,18 +63,75 @@ async function deleteItem(){
 // ~~~~~~~~~
 
 
-
-Array.from(complete).forEach((element)=>{
-    element.addEventListener('click', markComplete)
+// ~~~~~~~~~
+// Meal Plan Mark Complete Functionality Start
+// ~~~~~~~~~
+Array.from(completeMealPlan).forEach((element)=>{
+    element.addEventListener('click', markCompleteMealPlan)
 })
 
-console.log('complete: ', Array.from(complete))
+console.log('complete: ', Array.from(completeMealPlan))
 
-Array.from(incomplete).forEach((element)=>{
-    element.addEventListener('click', markIncomplete)
+Array.from(incompleteMealPlan).forEach((element)=>{
+    element.addEventListener('click', markIncompleteMealPlan)
 })
 
-console.log('incomplete: ', Array.from(incomplete))
+console.log('incomplete: ', Array.from(incompleteMealPlan))
+
+async function markCompleteMealPlan(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    try{
+        const response = await fetch('markCompleteMealPlan', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'itemFromJS': itemText
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function markIncompleteMealPlan(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    try{
+        const response = await fetch('markIncompleteMealPlan', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'itemFromJS': itemText
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+
+    }catch(err){
+        console.log(err)
+    }
+}
+// ~~~~~~~~~
+// Meal Plan Mark Complete Functionality End
+// ~~~~~~~~~
+
+
+
+Array.from(completeGroceryList).forEach((element)=>{
+    element.addEventListener('click', markCompleteGroceryList)
+})
+
+console.log('complete: ', Array.from(completeGroceryList))
+
+Array.from(incompleteGroceryList).forEach((element)=>{
+    element.addEventListener('click', markIncompleteGroceryList)
+})
+
+console.log('incomplete: ', Array.from(incompleteGroceryList))
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click', markUnComplete)
@@ -129,10 +189,10 @@ async function subNumOfItem(){
     }
 }
 
-async function markComplete(){
+async function markCompleteGroceryList(){
     const itemText = this.parentNode.childNodes[1].innerText
     try{
-        const response = await fetch('markComplete', {
+        const response = await fetch('markCompleteGroceryList', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -148,10 +208,10 @@ async function markComplete(){
     }
 }
 
-async function markIncomplete(){
+async function markIncompleteGroceryList(){
     const itemText = this.parentNode.childNodes[1].innerText
     try{
-        const response = await fetch('markIncomplete', {
+        const response = await fetch('markIncompleteGroceryList', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
