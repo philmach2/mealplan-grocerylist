@@ -22,7 +22,7 @@ MongoClient.connect(dbConnectionStr)
     // MEAL PLAN Start
     // Read! Start
     app.get('/meal-plan', (req, res) => {
-        db.collection('meal-plan-collection')
+        mealPlanCollection
             .find()
             .toArray()
             .then(results => {
@@ -142,6 +142,7 @@ MongoClient.connect(dbConnectionStr)
     app.get('/grocery-list', (req, res) => {
         groceryListCollection.find().toArray()
         .then(results => {
+            console.table(results)
             res.render('grocery-list.ejs', { groceryListItems: results })
         })
         .catch(error => console.error(error))
