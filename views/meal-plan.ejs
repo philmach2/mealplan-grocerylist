@@ -115,7 +115,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
                     <% if (mealPlanStuff[i].mondaymeal) {%>
-                      <li class="item">
+                      <li id="monday" class="item">
                         <% if(mealPlanStuff[i].complete === true) { %>
                           <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                           <span class='fa fa-trash'></span>
@@ -147,15 +147,22 @@
                 <form action="/meal-plan-form" method="POST">
                   <input class="bg-gray-200" type="text" placeholder="Tuesday meal" name="tuesdaymeal" />
                   <input type="hidden" name="weekday" value="tuesday">
+                  <input type="hidden" name="complete" value="false">
                   <button type="submit">Add</button>
                 </form>
+
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
                     <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                      <li>
-                        <span><%= mealPlanStuff[i].tuesdaymeal %></span>  &nbsp
-                        <span class='fa fa-trash'></span>
+                      <li id="tuesday" class="item">
+                        <% if(mealPlanStuff[i].complete === true) { %>
+                          <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% }else { %>
+                          <span class="item-name" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% } %>
                       </li>
                     <% } %>
                   
