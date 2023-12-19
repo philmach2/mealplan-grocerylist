@@ -19,7 +19,10 @@ MongoClient.connect(dbConnectionStr)
         groceryListCollection = db.collection('grocery-list-collection')
         mealPlanCollection = db.collection('meal-plan-collection')
 
+
+    // ~~~~~~~~~
     // MEAL PLAN Start
+    // ~~~~~~~~~
     // Read! Start
     app.get('/meal-plan', (req, res) => {
         mealPlanCollection
@@ -44,7 +47,8 @@ MongoClient.connect(dbConnectionStr)
     // Create! End
 
     // Update! Start
-    app.put('/markCompleteMealPlan', (request, response) => {
+    // Monday Start
+    app.put('/markCompleteMealPlanmonday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {mondaymeal: request.body.itemFromJS},
@@ -54,13 +58,13 @@ MongoClient.connect(dbConnectionStr)
                 upsert: false
             })
             .then(result => {
-                console.log('Marked Complete meal plan')
-                response.json('Marked Complete meal plan')
+                console.log('Marked Complete meal plan Monday')
+                response.json('Marked Complete meal plan Monday')
             })
             .catch(error => console.error(error))
     })
     
-    app.put('/markIncompleteMealPlan', (request, response) => {
+    app.put('/markIncompleteMealPlanmonday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {mondaymeal: request.body.itemFromJS},
@@ -70,11 +74,46 @@ MongoClient.connect(dbConnectionStr)
                 upsert: false
             })
             .then(result => {
-                console.log('Marked Incomplete meal plan')
-                response.json('Marked Incomplete meal plan')
+                console.log('Marked Incomplete meal plan Monday')
+                response.json('Marked Incomplete meal plan Monday')
             })
             .catch(error => console.error(error))
     })
+    // Monday End
+
+    // Tuesday Start
+    app.put('/markCompleteMealPlantuesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {tuesdaymeal: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Complete meal plan Tuesday')
+                response.json('Marked Complete meal plan Tuesday')
+            })
+            .catch(error => console.error(error))
+    })
+    
+    app.put('/markIncompleteMealPlantuesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {tuesdaymeal: request.body.itemFromJS},
+                {$set: { complete: false } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Incomplete meal plan Tuesday')
+                response.json('Marked Incomplete meal plan Tuesday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Tuesday End
     // Update! End
 
     // Delete! Start
@@ -132,11 +171,14 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     // Delete! End
+    // ~~~~~~~~~
     // MEAL PLAN End
+    // ~~~~~~~~~
 
 
-
-    // GROCERY LIST
+    // ~~~~~~~~~
+    // GROCERY LIST Start
+    // ~~~~~~~~~
     app.get('/grocery-list', (req, res) => {
         groceryListCollection.find().toArray()
         .then(results => {
@@ -202,22 +244,25 @@ MongoClient.connect(dbConnectionStr)
             response.json('Marked Complete'); 
           })
           .catch((error) => console.error(error));
-      });
+    });
 
 
-      //Mark item incomplete
-      app.put('/markIncompleteGroceryList', (request, response) => {
-        groceryListCollection
-        .updateOne(
-            { itemName: request.body.itemFromJS },
-            { $set: { complete: false, }, },
-        )
-          .then((result) => {
-            console.log('Marked Incomplete');
-            response.json('Marked Incomplete'); 
-          })
-          .catch((error) => console.error(error));
-      });
+    //Mark item incomplete
+    app.put('/markIncompleteGroceryList', (request, response) => {
+    groceryListCollection
+    .updateOne(
+        { itemName: request.body.itemFromJS },
+        { $set: { complete: false, }, },
+    )
+        .then((result) => {
+        console.log('Marked Incomplete');
+        response.json('Marked Incomplete'); 
+        })
+        .catch((error) => console.error(error));
+    });
+    // ~~~~~~~~~
+    // GROCERY LIST Start
+    // ~~~~~~~~~
 
 
     // SERVER CONNECT

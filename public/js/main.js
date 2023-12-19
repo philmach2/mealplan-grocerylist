@@ -78,10 +78,26 @@ Array.from(incompleteMealPlan).forEach((element)=>{
 
 console.log('incomplete: ', Array.from(incompleteMealPlan))
 
+// Monday Start
+
+const daysArr = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+]
+
 async function markCompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
+    let id = this.parentNode.id
+    console.log('this.parentNode.id: ', this.parentNode.id)
+
     try{
-        const response = await fetch('markCompleteMealPlan', {
+
+        const response = await fetch(`markCompleteMealPlan${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -99,8 +115,13 @@ async function markCompleteMealPlan(){
 
 async function markIncompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
+    let id = this.parentNode.id
+    console.log('this.parentNode.id: ', this.parentNode.id)
+
+
     try{
-        const response = await fetch('markIncompleteMealPlan', {
+
+        const response = await fetch(`markIncompleteMealPlan${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -115,6 +136,48 @@ async function markIncompleteMealPlan(){
         console.log(err)
     }
 }
+// Monday End
+
+// Tuesday Start
+// async function markCompleteMealPlan(){
+//     const itemText = this.parentNode.childNodes[1].innerText
+//     try{
+//         const response = await fetch('markCompleteMealPlanTuesday', {
+//             method: 'put',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//                 'itemFromJS': itemText
+//             })
+//           })
+//         const data = await response.json()
+//         console.log(data)
+//         location.reload()
+
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+
+// async function markIncompleteMealPlan(){
+//     const itemText = this.parentNode.childNodes[1].innerText
+//     try{
+//         const response = await fetch('markIncompleteMealPlanTuesday', {
+//             method: 'put',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//                 'itemFromJS': itemText
+//             })
+//           })
+//         const data = await response.json()
+//         console.log(data)
+//         location.reload()
+
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+// Tuesday End
+
 // ~~~~~~~~~
 // Meal Plan Mark Complete Functionality End
 // ~~~~~~~~~
