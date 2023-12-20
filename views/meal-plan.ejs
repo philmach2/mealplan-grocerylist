@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Plan, Grocery List</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- <link href="/dist/output.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="/assets/grocery-cart-color.png">
 
 </head>
 <body>
 
-  <div class="bg-white">
+  <div id="meal-plan" class="bg-white">
 
     <!-- Header Start -->
     <header class="absolute inset-x-0 top-0 z-50">
@@ -106,15 +108,21 @@
                 <form action="/meal-plan-form" method="POST">
                   <input class="bg-gray-200" type="text" placeholder="Monday meal" name="mondaymeal" />
                   <input type="hidden" name="weekday" value="monday">
+                  <input type="hidden" name="complete" value="false">
                   <button type="submit">Add</button>
                 </form>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
                     <% if (mealPlanStuff[i].mondaymeal) {%>
-                      <li>
-                        <span><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
-                        <span class='fa fa-trash'></span>
+                      <li id="monday" class="item">
+                        <% if(mealPlanStuff[i].complete === true) { %>
+                          <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% }else { %>
+                          <span class="item-name" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% } %>
                       </li>
                     <% } %>
                   
@@ -139,15 +147,22 @@
                 <form action="/meal-plan-form" method="POST">
                   <input class="bg-gray-200" type="text" placeholder="Tuesday meal" name="tuesdaymeal" />
                   <input type="hidden" name="weekday" value="tuesday">
+                  <input type="hidden" name="complete" value="false">
                   <button type="submit">Add</button>
                 </form>
+
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
                     <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                      <li>
-                        <span><%= mealPlanStuff[i].tuesdaymeal %></span>  &nbsp
-                        <span class='fa fa-trash'></span>
+                      <li id="tuesday" class="item">
+                        <% if(mealPlanStuff[i].complete === true) { %>
+                          <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% }else { %>
+                          <span class="item-name" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% } %>
                       </li>
                     <% } %>
                   
