@@ -48,7 +48,7 @@ MongoClient.connect(dbConnectionStr)
 
     // Update! Start
     // Monday Start
-    app.put('/markCompleteMealPlanmonday', (request, response) => {
+    app.put('/markCompleteMealPlanMonday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {mondaymeal: request.body.itemFromJS},
@@ -64,7 +64,7 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     
-    app.put('/markIncompleteMealPlanmonday', (request, response) => {
+    app.put('/markIncompleteMealPlanMonday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {mondaymeal: request.body.itemFromJS},
@@ -82,7 +82,7 @@ MongoClient.connect(dbConnectionStr)
     // Monday End
 
     // Tuesday Start
-    app.put('/markCompleteMealPlantuesday', (request, response) => {
+    app.put('/markCompleteMealPlanTuesday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {tuesdaymeal: request.body.itemFromJS},
@@ -98,7 +98,7 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     
-    app.put('/markIncompleteMealPlantuesday', (request, response) => {
+    app.put('/markIncompleteMealPlanTuesday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {tuesdaymeal: request.body.itemFromJS},
