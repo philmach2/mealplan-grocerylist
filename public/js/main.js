@@ -79,24 +79,16 @@ Array.from(incompleteMealPlan).forEach((element)=>{
 console.log('incomplete: ', Array.from(incompleteMealPlan))
 
 // Monday Start
-
-const daysArr = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-]
-
 async function markCompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
     let id = this.parentNode.id
-    console.log('this.parentNode.id: ', this.parentNode.id)
+
+    id = id.charAt(0).toUpperCase() + id.slice(1)
+    console.log('id: ', id)
+
+    // console.log('this.parentNode.id: ', this.parentNode.id)
 
     try{
-
         const response = await fetch(`markCompleteMealPlan${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -107,7 +99,6 @@ async function markCompleteMealPlan(){
         const data = await response.json()
         console.log(data)
         location.reload()
-
     }catch(err){
         console.log(err)
     }
@@ -116,11 +107,13 @@ async function markCompleteMealPlan(){
 async function markIncompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
     let id = this.parentNode.id
-    console.log('this.parentNode.id: ', this.parentNode.id)
 
+    id = id.charAt(0).toUpperCase() + id.slice(1)
+    console.log('id: ', id)
+
+    // console.log('this.parentNode.id: ', this.parentNode.id)
 
     try{
-
         const response = await fetch(`markIncompleteMealPlan${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -131,7 +124,6 @@ async function markIncompleteMealPlan(){
         const data = await response.json()
         console.log(data)
         location.reload()
-
     }catch(err){
         console.log(err)
     }
