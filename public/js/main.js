@@ -84,7 +84,7 @@ async function markCompleteMealPlan(){
     let id = this.parentNode.id
 
     id = id.charAt(0).toUpperCase() + id.slice(1)
-    console.log('id: ', id)
+    // console.log('id: ', id)
 
     // console.log('this.parentNode.id: ', this.parentNode.id)
 
@@ -109,7 +109,7 @@ async function markIncompleteMealPlan(){
     let id = this.parentNode.id
 
     id = id.charAt(0).toUpperCase() + id.slice(1)
-    console.log('id: ', id)
+    // console.log('id: ', id)
 
     // console.log('this.parentNode.id: ', this.parentNode.id)
 

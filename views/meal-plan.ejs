@@ -128,7 +128,6 @@
                   
                   <% } %>
                 </ul>
-            
               </dd>
             </div>
             <!-- Monday End -->
@@ -150,7 +149,6 @@
                   <input type="hidden" name="complete" value="false">
                   <button type="submit">Add</button>
                 </form>
-
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
@@ -168,7 +166,6 @@
                   
                   <% } %>
                 </ul>
-            
               </dd>
             </div>
             <!-- Tuesday End -->
@@ -187,21 +184,26 @@
                 <form action="/meal-plan-form" method="POST">
                   <input class="bg-gray-200" type="text" placeholder="Wednesday meal" name="wednesdaymeal" />
                   <input type="hidden" name="weekday" value="wednesday">
+                  <input type="hidden" name="complete" value="false">
                   <button type="submit">Add</button>
                 </form>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
             
                     <% if (mealPlanStuff[i].wednesdaymeal) {%>
-                      <li>
-                        <span><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
-                        <span class="fa fa-trash"></span>
+                      <li id="wednesday" class="item">
+                        <% if(mealPlanStuff[i].complete === true) { %>
+                          <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% }else { %>
+                          <span class="item-name" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                          <span class='fa fa-trash'></span>
+                        <% } %>
                       </li>
                     <% } %>
                   
                   <% } %>
                 </ul>
-            
               </dd>
             </div>
             <!-- Wednesday End -->
