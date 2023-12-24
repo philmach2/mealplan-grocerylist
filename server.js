@@ -114,6 +114,40 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     // Tuesday End
+
+    // Wednesday Start
+    app.put('/markCompleteMealPlanWednesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {wednesdaymeal: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Complete meal plan Wednesday')
+                response.json('Marked Complete meal plan Wednesday')
+            })
+            .catch(error => console.error(error))
+    })
+    
+    app.put('/markIncompleteMealPlanWednesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {wednesdaymeal: request.body.itemFromJS},
+                {$set: { complete: false } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Incomplete meal plan Wednesday')
+                response.json('Marked Incomplete meal plan Wednesday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Wednesday End  
     // Update! End
 
     // Delete! Start
