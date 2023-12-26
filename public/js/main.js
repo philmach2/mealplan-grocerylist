@@ -3,8 +3,8 @@ const decrease = document.querySelectorAll('#sub-num-button')
 const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
 const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
 
-const completeMealPlan = document.querySelectorAll('#meal-plan .item span')
-const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.complete')
+const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
+const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 
 // const itemCompleted = document.querySelectorAll('.item span.completed')
 // const deleteBtn = document.querySelectorAll('.fa-trash')
@@ -86,7 +86,7 @@ async function markCompleteMealPlan(){
     id = id.charAt(0).toUpperCase() + id.slice(1)
     // console.log('id: ', id)
 
-    // console.log('this.parentNode.id: ', this.parentNode.id)
+    console.log('markComplete this.parentNode.id: ', this.parentNode.id)
 
     try{
         const response = await fetch(`markCompleteMealPlan${id}`, {
@@ -111,7 +111,7 @@ async function markIncompleteMealPlan(){
     id = id.charAt(0).toUpperCase() + id.slice(1)
     // console.log('id: ', id)
 
-    // console.log('this.parentNode.id: ', this.parentNode.id)
+    console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
         const response = await fetch(`markIncompleteMealPlan${id}`, {
