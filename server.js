@@ -147,7 +147,143 @@ MongoClient.connect(dbConnectionStr)
             })
             .catch(error => console.error(error))
     })
-    // Wednesday End  
+    // Wednesday End
+
+    // Thursday Start
+    app.put('/markCompleteMealPlanThursday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {thursdaymeal: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Complete meal plan Thursday')
+                response.json('Marked Complete meal plan Thursday')
+            })
+            .catch(error => console.error(error))
+    })
+    
+    app.put('/markIncompleteMealPlanThursday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {thursdaymeal: request.body.itemFromJS},
+                {$set: { complete: false } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Incomplete meal plan Thursday')
+                response.json('Marked Incomplete meal plan Thursday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Thursday End
+
+    // Friday Start
+    app.put('/markCompleteMealPlanFriday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {fridaymeal: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Complete meal plan Friday')
+                response.json('Marked Complete meal plan Friday')
+            })
+            .catch(error => console.error(error))
+    })
+    
+    app.put('/markIncompleteMealPlanFriday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {fridaymeal: request.body.itemFromJS},
+                {$set: { complete: false } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Incomplete meal plan Friday')
+                response.json('Marked Incomplete meal plan Friday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Friday End
+
+    // Saturday Start
+    app.put('/markCompleteMealPlanSaturday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {sundaymeal: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Complete meal plan Saturday')
+                response.json('Marked Complete meal plan Saturday')
+            })
+            .catch(error => console.error(error))
+    })
+    
+    app.put('/markIncompleteMealPlanSaturday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {sundaymeal: request.body.itemFromJS},
+                {$set: { complete: false } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Incomplete meal plan Saturday')
+                response.json('Marked Incomplete meal plan Saturday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Saturday End
+
+    // Sunday Start
+    app.put('/markCompleteMealPlanSunday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {sundaymeal: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Complete meal plan Sunday')
+                response.json('Marked Complete meal plan Sunday')
+            })
+            .catch(error => console.error(error))
+    })
+    
+    app.put('/markIncompleteMealPlanSunday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {sundaymeal: request.body.itemFromJS},
+                {$set: { complete: false } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Marked Incomplete meal plan Sunday')
+                response.json('Marked Incomplete meal plan Sunday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Sunday End
     // Update! End
 
     // Delete! Start

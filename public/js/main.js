@@ -78,7 +78,7 @@ Array.from(incompleteMealPlan).forEach((element)=>{
 
 console.log('incomplete: ', Array.from(incompleteMealPlan))
 
-// Monday Start
+
 async function markCompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
     let id = this.parentNode.id
@@ -128,48 +128,6 @@ async function markIncompleteMealPlan(){
         console.log(err)
     }
 }
-// Monday End
-
-// Tuesday Start
-// async function markCompleteMealPlan(){
-//     const itemText = this.parentNode.childNodes[1].innerText
-//     try{
-//         const response = await fetch('markCompleteMealPlanTuesday', {
-//             method: 'put',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//                 'itemFromJS': itemText
-//             })
-//           })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-
-// async function markIncompleteMealPlan(){
-//     const itemText = this.parentNode.childNodes[1].innerText
-//     try{
-//         const response = await fetch('markIncompleteMealPlanTuesday', {
-//             method: 'put',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//                 'itemFromJS': itemText
-//             })
-//           })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-// Tuesday End
-
 // ~~~~~~~~~
 // Meal Plan Mark Complete Functionality End
 // ~~~~~~~~~
@@ -180,13 +138,13 @@ Array.from(completeGroceryList).forEach((element)=>{
     element.addEventListener('click', markCompleteGroceryList)
 })
 
-console.log('complete: ', Array.from(completeGroceryList))
+// console.log('complete: ', Array.from(completeGroceryList))
 
 Array.from(incompleteGroceryList).forEach((element)=>{
     element.addEventListener('click', markIncompleteGroceryList)
 })
 
-console.log('incomplete: ', Array.from(incompleteGroceryList))
+// console.log('incomplete: ', Array.from(incompleteGroceryList))
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click', markUnComplete)
