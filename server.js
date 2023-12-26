@@ -221,7 +221,7 @@ MongoClient.connect(dbConnectionStr)
     app.put('/markCompleteMealPlanSaturday', (request, response) => {
         mealPlanCollection
             .updateOne(
-                {sundaymeal: request.body.itemFromJS},
+                {saturdaymeal: request.body.itemFromJS},
                 {$set: { complete: true } },
             {
                 sort: {_id: -1},
@@ -237,7 +237,7 @@ MongoClient.connect(dbConnectionStr)
     app.put('/markIncompleteMealPlanSaturday', (request, response) => {
         mealPlanCollection
             .updateOne(
-                {sundaymeal: request.body.itemFromJS},
+                {saturdaymeal: request.body.itemFromJS},
                 {$set: { complete: false } },
             {
                 sort: {_id: -1},
