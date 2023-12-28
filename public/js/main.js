@@ -5,6 +5,7 @@ const incompleteGroceryList = document.querySelectorAll('#grocery-list .item spa
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
+const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
 
 // const itemCompleted = document.querySelectorAll('.item span.completed')
 // const deleteBtn = document.querySelectorAll('.fa-trash')
@@ -132,6 +133,28 @@ async function markIncompleteMealPlan(){
 // Meal Plan Mark Complete Functionality End
 // ~~~~~~~~~
 
+
+// ~~~~~~~~~
+// Meal Plan Edit Functionality Start
+// ~~~~~~~~~
+const addNoteBtn = document.querySelectorAll('.fa-sticky-note')
+const noteInput = document.querySelector('.item-note-form')
+
+Array.from(addNoteBtn).forEach((element)=>{
+    console.log('Array.from(addNoteBtn): ', addNoteBtn)
+    element.addEventListener('click', addNoteToItem)
+})
+
+function addNoteToItem() {
+    console.log('noteInput: ', noteInput)
+    // document.querySelector('.item-note-form').style.display = 'block'
+    noteInput.style.display = 'block'
+    console.log('Add Note To Item')
+}
+
+// ~~~~~~~~~
+// Meal Plan Edit Functionality End
+// ~~~~~~~~~
 
 
 Array.from(completeGroceryList).forEach((element)=>{
