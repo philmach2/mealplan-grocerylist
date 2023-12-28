@@ -118,10 +118,21 @@
                       <li id="monday" class="item">
                         <% if(mealPlanStuff[i].complete === true) { %>
                           <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
+                          <span class="far fa-edit"></span>
+                          <span class="far fa-sticky-note"></span>
+                          <span class='fa fa-trash'></span><br />
+                          <form class='item-note-form'>
+                            <input class="bg-gray-200" type="text" placeholder="Item note" name="mondaynote" />
+                          </form>
+
                         <% }else { %>
                           <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
+                          <span class="far fa-edit"></span>
+                          <span class="far fa-sticky-note"></span>
+                          <span class='fa fa-trash'></span><br />
+                          <form class="item-note-form">
+                            <input class="bg-gray-200" type="text" placeholder="Item note" name="mondaynote" />
+                          </form>
                         <% } %>
                       </li>
                     <% } %>
