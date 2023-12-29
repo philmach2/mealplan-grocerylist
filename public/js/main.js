@@ -148,7 +148,7 @@ Array.from(addNoteBtn).forEach((element)=>{
 function addNoteToItem() {
     console.log('noteInput: ', noteInput)
     // document.querySelector('.item-note-form').style.display = 'block'
-    noteInput.style.display = 'block'
+    noteInput.classList.toggle('item-note-display-toggle')
     console.log('Add Note To Item')
 }
 

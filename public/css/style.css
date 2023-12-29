@@ -6,3 +6,7 @@
 .item-note-form {
     display: none;
 }
+
+.item-note-display-toggle {
+    display: block;
+}
