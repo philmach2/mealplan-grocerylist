@@ -4,10 +4,10 @@
 }
 
 .item-note {
+    display: none;
     font-style: italic;
     text-indent: 10px;
-    line-height: 1rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .item-note-form {
