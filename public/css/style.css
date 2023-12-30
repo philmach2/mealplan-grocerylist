@@ -3,6 +3,13 @@
     text-decoration: line-through;
 }
 
+.item-note {
+    font-style: italic;
+    text-indent: 10px;
+    line-height: 1rem;
+    padding-bottom: 0.5rem;
+}
+
 .item-note-form {
     display: none;
 }
