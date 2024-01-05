@@ -66,10 +66,6 @@ Array.from(incomplete).forEach((element)=>{
     element.addEventListener('click', markIncomplete)
 })
 
-// Array.from(itemCompleted).forEach((element)=>{
-//     element.addEventListener('click', markUnComplete)
-// })
-
 Array.from(increase).forEach(element => {
     element.addEventListener('click', addNumOfItem)
 })
