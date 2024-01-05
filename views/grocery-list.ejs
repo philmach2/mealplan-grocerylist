@@ -120,9 +120,14 @@
                               <span class="item-name"><%= groceryListItems[i].itemName %></span>
                             <% } %>
                             <!-- Goal is for if item drops below 1, then COMPLETE path is executed -->
-                            <button id="sub-num-button">-</button>
-                            <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                            <button id="add-num-button">+</button>
+                            <% if(groceryListItems[i].numItem >= 1) { %>
+                              <button id="sub-num-button">-</button>
+                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <button id="add-num-button">+</button>
+                            <% }else { %>
+                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <button id="add-num-button">+</button>
+                            <% } %>
                           </li>
                           <% } %>
                       <% } %>
