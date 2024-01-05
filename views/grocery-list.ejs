@@ -119,12 +119,8 @@
                             <% }else { %>
                               <span class="item-name"><%= groceryListItems[i].itemName %></span>
                             <% } %>
-                            <% if(groceryListItems[i].numItem > 1) { %>
-                              <button id="sub-num-button">-</button>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                            <% }else { %>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                            <% } %>
+                            <button id="sub-num-button">-</button>
+                            <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
                             <button id="add-num-button">+</button>
                           </li>
                           <% } %>
