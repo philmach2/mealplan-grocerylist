@@ -122,20 +122,20 @@
                           <span class="far fa-edit"></span>
                           <span class="far fa-sticky-note"></span>
                           <span class='fa fa-trash'></span><br />
-                          <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                          <form class='item-note-form'>
+                          <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div><button></button>
+                          <!-- <form class='item-note-form'>
                             <input class="bg-gray-200" type="text" placeholder="Item note" name="mondaynote" />
-                          </form>
+                          </form> -->
 
                         <% }else { %>
                           <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                           <span class="far fa-edit"></span>
                           <span class="far fa-sticky-note"></span>
                           <span class='fa fa-trash'></span><br />
-                          <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                          <form class="item-note-form">
+                          <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div><button class="button button1" type="button">save</button>
+                          <!-- <form class="item-note-form">
                             <input class="bg-gray-200" type="text" placeholder="Item note" name="mondaynote" />
-                          </form>
+                          </form> -->
                         <% } %>
                       </li>
                     <% } %>
