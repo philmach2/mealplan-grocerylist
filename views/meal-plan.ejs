@@ -122,8 +122,11 @@
                           <button><span class="far fa-edit"></span></button>
                           <button><span class="far fa-sticky-note"></span></button>
                           <span class='fa fa-trash'></span><br />
-                          <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                          <button class="save-button button1" type="button">save</button>
+                          <div id="myContentEditable" class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                          <form action="/update-note-monday" method="PUT" onsubmit="return copyContent()">
+                            <input id="hiddenInput" type="hidden" name="contentEditableCopy" value="note about item">
+                            <button class="save-button button1" type="submit">save</button>
+                          </form>
                           <!-- <form class='item-note-form'>
                             <input class="bg-gray-200" type="text" placeholder="Item note" name="mondaynote" />
                           </form> -->
@@ -133,8 +136,11 @@
                           <button><span class="far fa-edit"></span></button>
                           <button><span class="far fa-sticky-note"></span></button>
                           <span class='fa fa-trash'></span><br />
-                          <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                          <button class="save-button button1" type="button">save</button>
+                          <div id="myContentEditable" class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                          <form action="/update-note-monday" method="PUT" onsubmit="return copyContent()">
+                            <input id="hiddenInput" type="hidden" name="contentEditableCopy" value="note about item">
+                            <button class="save-button button1" type="submit">save</button>
+                          </form>
                           <!-- <form class="item-note-form">
                             <input class="bg-gray-200" type="text" placeholder="Item note" name="mondaynote" />
                           </form> -->
