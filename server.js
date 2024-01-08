@@ -95,6 +95,12 @@ MongoClient.connect(dbConnectionStr)
             })
             .catch(error => console.error(error))
 
+        groceryListCollection.deleteOne({_id: request.body.itemFromJS})
+            .then(result => {
+                console.log('Item Deleted')
+                response.json('Item Deleted')
+            })
+
     })
 
 
