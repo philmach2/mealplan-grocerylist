@@ -137,13 +137,13 @@ async function markIncompleteMealPlan(){
 // ~~~~~~~~~
 // Meal Plan Edit Functionality Start
 // ~~~~~~~~~
-const addNoteBtn = document.querySelectorAll('.fa-sticky-note')
+const showNoteBtn = document.querySelectorAll('.fa-sticky-note')
 // const noteInput = document.querySelector('.item-note-form')
 const notes = document.querySelector('.item-note')
 const notesSaveBtn = document.querySelector('.save-button')
 
-Array.from(addNoteBtn).forEach((element)=>{
-    console.log('Array.from(addNoteBtn): ', addNoteBtn)
+Array.from(showNoteBtn).forEach( element => {
+    console.log('Array.from(showNoteBtn): ', showNoteBtn)
     element.addEventListener('click', addNoteToItem)
 })
 
@@ -155,6 +155,16 @@ function addNoteToItem() {
     console.log('Add Note To Item')
 }
 
+Array.from(notesSaveBtn).forEach( element => {
+    console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
+    element.addEventListener('click', )
+})
+
+function copyContent() {
+    document.getElementById("hiddenInput").value =  
+        document.getElementById("myContentEditable").innerHTML;
+    return true;
+}
 
 // ~~~~~~~~~
 // Meal Plan Edit Functionality End

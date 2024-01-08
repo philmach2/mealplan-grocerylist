@@ -36,6 +36,7 @@ MongoClient.connect(dbConnectionStr)
     })
     // Read! End
 
+
     // Create! Start
     app.post('/meal-plan-form', (req, res) => {
         mealPlanCollection.insertOne(req.body)
@@ -46,7 +47,8 @@ MongoClient.connect(dbConnectionStr)
     })
     // Create! End
 
-    // Update! Start
+
+    // Mark Complete/Incomplete Update! Start
     // Monday Start
     app.put('/markCompleteMealPlanMonday', (request, response) => {
         mealPlanCollection
@@ -284,7 +286,29 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     // Sunday End
-    // Update! End
+    // Mark Complete/Incomplete Update! End
+
+
+    // Note Update! Start
+    // Monday Begin
+    app.post('/update-note-monday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {note: request.body.itemFromJS},
+                {$set: { complete: true } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan Monday')
+                response.json('Updated note meal plan Monday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Monday End
+    // Note Update! End
+
 
     // Delete! Start
     app.delete('/deleteItem', (request, response) => {
