@@ -158,13 +158,15 @@ function addNoteToItem() {
 Array.from(notesSaveBtn).forEach( element => {
     console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
     element.addEventListener('click', )
+
+    // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
+
+
+
+    
 })
 
-function copyContent() {
-    document.getElementById("hiddenInput").value =  
-        document.getElementById("myContentEditable").innerHTML;
-    return true;
-}
+
 
 // ~~~~~~~~~
 // Meal Plan Edit Functionality End
