@@ -140,7 +140,7 @@ async function markIncompleteMealPlan(){
 const addNoteBtn = document.querySelectorAll('.fa-sticky-note')
 // const noteInput = document.querySelector('.item-note-form')
 const notes = document.querySelector('.item-note')
-const notesEditBtn = document.querySelector('.button')
+const notesSaveBtn = document.querySelector('.save-button')
 
 Array.from(addNoteBtn).forEach((element)=>{
     console.log('Array.from(addNoteBtn): ', addNoteBtn)
@@ -151,9 +151,10 @@ function addNoteToItem() {
     console.log('notes: ', notes)
     // document.querySelector('.item-note-form').style.display = 'block'
     notes.classList.toggle('item-note-display-toggle')
-    notesEditBtn.classList.toggle('button-display-toggle')
+    notesSaveBtn.classList.toggle('button-display-toggle')
     console.log('Add Note To Item')
 }
+
 
 // ~~~~~~~~~
 // Meal Plan Edit Functionality End
