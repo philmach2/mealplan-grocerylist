@@ -9,23 +9,23 @@
     text-indent: 10px;
     /* margin-bottom: 0.5rem; */
 }
-.button {
+.save-button {
     display: none;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 0px 5px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
   }
   
-.button.button1 {
+.save-button.button1 {
     background-color: #04AA6D;
 } /* Green */
-.button.button2 {
+.save-button.button2 {
     background-color: #008CBA;
 } /* Blue */
 
