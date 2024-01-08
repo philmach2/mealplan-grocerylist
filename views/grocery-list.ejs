@@ -12,138 +12,6 @@
   </head>
 <body>
 
-
-    <!-- Phil OG code start -->
-    <!-- <h1>GROCERY LIST</h1>
-    <h2><a href="meal-plan">Meal Plan</a></h2> -->
-
-    <!-- <h3>FRUIT/VEGETABLE</h3>
-    <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="itemName">
-        <input type="hidden" name="category" value="produce">
-        <input type="hidden" name="numItem" value="1">
-        <input type="hidden" name="complete" value="false">
-        <button type="submit">Add</button>
-    </form>
-
-    <ul class="items">
-        <% for(let i = 0; i < groceryListItems.length; i++) { %>
-            <% if(groceryListItems[i].category === 'produce') { %>
-            <li class="item">
-                <% if(groceryListItems[i].complete === true) { %>
-                <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
-                <% }else { %>
-                <span class="item-name"><%= groceryListItems[i].itemName %></span>
-                <% } %>
-                <button id="add-num-button">+</button>
-                <% if(groceryListItems[i].numItem >= 1) { %>
-                <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                <% } %>
-                <button id="sub-num-button">-</button>
-            </li>
-            <% } %>
-        <% } %>
-    </ul> -->
-
-   
-    
-    <!-- <h3>PROTEIN</h3>
-    <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="itemName">
-        <input type="hidden" name="category" value="protein">
-        <input type="hidden" name="numItem" value="1">
-        <button type="submit">Add</button>
-    </form>
-    <ul class="items">
-        <% for(let i = 0; i < groceryListItems.length; i++) { %>
-           <% if(groceryListItems[i].category === 'protein') { %> 
-            <li class="item">
-                <span class="item-name"><%= groceryListItems[i].itemName %></span>
-                <button id="add-num-button">+</button>
-                <% if(groceryListItems[i].numItem >= 1) { %>
-                <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                <% } %>
-                <button id="sub-num-button">-</button>
-            </li>
-            <% } %>
-        <% } %>
-    </ul> -->
-   
-
-    <!-- <h3>GRAINS/LEGUMES/NUTS/SEEDS</h3>
-    <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="itemName">
-        <input type="hidden" name="category" value="pantry">
-        <input type="hidden" name="numItem" value="1">
-        <button type="submit">Add</button>
-    </form>
-
-    <ul class="items">
-    <% for(let i = 0; i < groceryListItems.length; i++) { %>
-        <% if(groceryListItems[i].category === 'pantry') { %>
-            <li class="item">
-                <span class="item-name"><%= groceryListItems[i].itemName %></span>
-                <button id="add-num-button">+</button>
-                <% if(groceryListItems[i].numItem >= 1) { %>
-                <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                <% } %>
-                <button id="sub-num-button">-</button>
-            </li>
-      <% } %>  
-    <% } %>
-    </ul> -->
-   
-
-    <!-- <h3>FATS/SPICES/COND</h3>
-    <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="itemName">
-        <input type="hidden" name="category" value="condiments">
-        <input type="hidden" name="numItem" value="1">
-        <button type="submit">Add</button>
-    </form>
-
-    <ul class="items">
-        <% for(let i = 0; i < groceryListItems.length; i++) { %>
-            <% if(groceryListItems[i].category === 'condiments') { %>
-                <li class="item">
-                    <span class="item-name"><%= groceryListItems[i].itemName %></span>
-                    <button id="add-num-button">+</button>
-                    <% if(groceryListItems[i].numItem >= 1) { %>
-                    <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                    <% } %>
-                    <button id="sub-num-button">-</button>
-                </li>
-          <% } %>  
-        <% } %>
-    </ul> -->
- 
-
-    <!-- <h3>OTHER</h3>
-    <form action="/addGrocery" method="POST">
-        <input type="text" placeholder="Add Item" name="itemName">
-        <input type="hidden" name="category" value="other">
-        <input type="hidden" name="numItem" value="1">
-        <button type="submit">Add</button>
-    </form>
-
-    <ul class="items">
-        <% for(let i = 0; i < groceryListItems.length; i++) { %>
-            <% if(groceryListItems[i].category === 'other') { %>
-                <li class="item">
-                    <span class="item-name"><%= groceryListItems[i].itemName %></span>
-                    <button id="add-num-button">+</button>
-                    <% if(groceryListItems[i].numItem >= 1) { %>
-                    <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                    <% } %>
-                    <button id="sub-num-button">-</button>
-                </li>
-          <% } %>  
-        <% } %>
-    </ul> -->
-    <!-- Phil OG code End -->
-
-
-
     <!-- Chris Styling Begin -->
     <div id="grocery-list" class="bg-white">
 
@@ -245,22 +113,26 @@
                     </form>
                 
                     <ul class="items">
-                        <% for(let i = 0; i < groceryListItems.length; i++) { %>
-                            <% if(groceryListItems[i].category === 'produce') { %>
-                            <li class="item">
-                                <% if(groceryListItems[i].complete === true) { %>
-                                <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
-                                <% }else { %>
-                                <span class="item-name"><%= groceryListItems[i].itemName %></span>
-                                <% } %>
-                                <button id="add-num-button">+</button>
-                                <% if(groceryListItems[i].numItem >= 1) { %>
-                                <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
-                                <% } %>
-                                <button id="sub-num-button">-</button>
-                            </li>
+                      <% for(let i = 0; i < groceryListItems.length; i++) { %>
+                        <% if(groceryListItems[i].category === 'produce') { %>
+                          <li class="item">
+                            <% if(groceryListItems[i].complete === true) { %>
+                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                            <% }else { %>
+                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
                             <% } %>
-                        <% } %>
+                            <!-- Goal is for if item drops below 1, then COMPLETE path is executed -->
+                            <% if(groceryListItems[i].numItem >= 1) { %>
+                              <button id="sub-num-button">-</button>
+                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <button id="add-num-button">+</button>
+                            <% }else { %>
+                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <button id="add-num-button">+</button>
+                            <% } %>
+                          </li>
+                          <% } %>
+                      <% } %>
                     </ul>
   
                   </dd>
@@ -364,10 +236,12 @@
                                 <li class="item">
                                     <span class="item-name"><%= groceryListItems[i].itemName %></span>
                                     <button id="add-num-button">+</button>
-                                    <% if(groceryListItems[i].numItem >= 1) { %>
+                                    <% if(groceryListItems[i].numItem > 1) { %>
+                                    <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                                    <button id="sub-num-button">-</button>
+                                    <% } else { %>
                                     <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
                                     <% } %>
-                                    <button id="sub-num-button">-</button>
                                 </li>
                           <% } %>  
                         <% } %>
