@@ -3,8 +3,9 @@ const decrease = document.querySelectorAll('#sub-num-button')
 const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
 const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
 
-const completeMealPlan = document.querySelectorAll('#meal-plan .item span')
-const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.complete')
+const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
+const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
+const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
 
 // const itemCompleted = document.querySelectorAll('.item span.completed')
 // const deleteBtn = document.querySelectorAll('.fa-trash')
@@ -78,25 +79,17 @@ Array.from(incompleteMealPlan).forEach((element)=>{
 
 console.log('incomplete: ', Array.from(incompleteMealPlan))
 
-// Monday Start
-
-const daysArr = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-]
 
 async function markCompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
     let id = this.parentNode.id
-    console.log('this.parentNode.id: ', this.parentNode.id)
+
+    id = id.charAt(0).toUpperCase() + id.slice(1)
+    // console.log('id: ', id)
+
+    console.log('markComplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-
         const response = await fetch(`markCompleteMealPlan${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -107,7 +100,6 @@ async function markCompleteMealPlan(){
         const data = await response.json()
         console.log(data)
         location.reload()
-
     }catch(err){
         console.log(err)
     }
@@ -116,11 +108,13 @@ async function markCompleteMealPlan(){
 async function markIncompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
     let id = this.parentNode.id
-    console.log('this.parentNode.id: ', this.parentNode.id)
 
+    id = id.charAt(0).toUpperCase() + id.slice(1)
+    // console.log('id: ', id)
+
+    console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-
         const response = await fetch(`markIncompleteMealPlan${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -131,70 +125,65 @@ async function markIncompleteMealPlan(){
         const data = await response.json()
         console.log(data)
         location.reload()
-
     }catch(err){
         console.log(err)
     }
 }
-// Monday End
-
-// Tuesday Start
-// async function markCompleteMealPlan(){
-//     const itemText = this.parentNode.childNodes[1].innerText
-//     try{
-//         const response = await fetch('markCompleteMealPlanTuesday', {
-//             method: 'put',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//                 'itemFromJS': itemText
-//             })
-//           })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-
-// async function markIncompleteMealPlan(){
-//     const itemText = this.parentNode.childNodes[1].innerText
-//     try{
-//         const response = await fetch('markIncompleteMealPlanTuesday', {
-//             method: 'put',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//                 'itemFromJS': itemText
-//             })
-//           })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-// Tuesday End
-
 // ~~~~~~~~~
 // Meal Plan Mark Complete Functionality End
 // ~~~~~~~~~
 
+
+// ~~~~~~~~~
+// Meal Plan Edit Functionality Start
+// ~~~~~~~~~
+const showNoteBtn = document.querySelectorAll('.fa-sticky-note')
+// const noteInput = document.querySelector('.item-note-form')
+const notes = document.querySelector('.item-note')
+const notesSaveBtn = document.querySelector('.save-button')
+
+Array.from(showNoteBtn).forEach( element => {
+    console.log('Array.from(showNoteBtn): ', showNoteBtn)
+    element.addEventListener('click', addNoteToItem)
+})
+
+function addNoteToItem() {
+    console.log('notes: ', notes)
+    // document.querySelector('.item-note-form').style.display = 'block'
+    notes.classList.toggle('item-note-display-toggle')
+    notesSaveBtn.classList.toggle('button-display-toggle')
+    console.log('Add Note To Item')
+}
+
+Array.from(notesSaveBtn).forEach( element => {
+    console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
+    element.addEventListener('click', )
+
+    // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
+
+
+
+    
+})
+
+
+
+// ~~~~~~~~~
+// Meal Plan Edit Functionality End
+// ~~~~~~~~~
 
 
 Array.from(completeGroceryList).forEach((element)=>{
     element.addEventListener('click', markCompleteGroceryList)
 })
 
-console.log('complete: ', Array.from(completeGroceryList))
+// console.log('complete: ', Array.from(completeGroceryList))
 
 Array.from(incompleteGroceryList).forEach((element)=>{
     element.addEventListener('click', markIncompleteGroceryList)
 })
 
-console.log('incomplete: ', Array.from(incompleteGroceryList))
+// console.log('incomplete: ', Array.from(incompleteGroceryList))
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click', markUnComplete)
