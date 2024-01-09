@@ -3,11 +3,9 @@
     text-decoration: line-through;
 }
 
-<<<<<<< HEAD
 .hidden {
     display: none;
 }
-=======
 .item-note {
     display: none;
     font-style: italic;
@@ -45,4 +43,3 @@
 .item-note-display-toggle {
     display: block;
 }
->>>>>>> 4a531bb4157effd7c5669dda534c182d2e1e2592
