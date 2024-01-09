@@ -456,9 +456,6 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
-    // ~~~~~~~~~
-    // GROCERY LIST Start
-    // ~~~~~~~~~
 
     app.delete('/deleteGrocery', (req, res) => {
       groceryListCollection.deleteOne({_id: req.body.itemFromJS})
