@@ -6,3 +6,43 @@
 .hidden {
     display: none;
 }
+
+.item-note {
+    display: none;
+    font-style: italic;
+    text-indent: 10px;
+    /* margin-bottom: 0.5rem; */
+}
+
+.save-button {
+    display: none;
+    border: none;
+    color: white;
+    padding: 0px 5px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+.save-button.button1 {
+    background-color: #04AA6D;
+} /* Green */
+
+.save-button.button2 {
+    background-color: #008CBA;
+} /* Blue */
+
+.button-display-toggle {
+    display: inline-block;
+}
+
+.item-note-form {
+    display: none;
+}
+
+.item-note-display-toggle {
+    display: block;
+}
