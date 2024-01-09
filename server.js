@@ -95,11 +95,6 @@ MongoClient.connect(dbConnectionStr)
             })
             .catch(error => console.error(error))
 
-        groceryListCollection.deleteOne({_id: request.body.itemFromJS})
-            .then(result => {
-                console.log('Item Deleted')
-                response.json('Item Deleted')
-            })
 
     })
 
@@ -170,11 +165,11 @@ MongoClient.connect(dbConnectionStr)
             response.json('Marked Complete'); 
           })
           .catch((error) => console.error(error));
-      });
+    });
 
 
-      //Mark item incomplete
-      app.put('/markIncomplete', (request, response) => {
+    //Mark item incomplete
+    app.put('/markIncomplete', (request, response) => {
         groceryListCollection
         .updateOne(
             { itemName: request.body.itemFromJS },
@@ -185,8 +180,15 @@ MongoClient.connect(dbConnectionStr)
             response.json('Marked Incomplete'); 
           })
           .catch((error) => console.error(error));
-      });
+    });
 
+    app.delete('/deleteGrocery', (req, res) => {
+      groceryListCollection.deleteOne({_id: req.body.itemFromJS})
+            .then(result => {
+                console.log('Grocery Item Deleted')
+                res.json('Grocery Item Deleted')
+            })
+    })
 
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {

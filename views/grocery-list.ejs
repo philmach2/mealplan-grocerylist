@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -81,26 +82,31 @@
                 
                     <ul class="items">
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
+
                         <% if(groceryListItems[i].category === 'produce') { %>
                           <li class="item">
-                            <span class='fa fa-trash'></span>
+
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
-                            <% }else { %>
+
+                            <% } else { %>
                               <span class="item-name"><%= groceryListItems[i].itemName %></span>
                             <% } %>
+
                             <% if(groceryListItems[i].numItem >= 2) { %>
                               <button id="sub-num-button">-</button>
                               <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
+                              <span class='fa fa-trash del'></span>
 
-                            <% }else { %>
+                            <% } else { %>
                               <span class="num-of-item hidden"><%= groceryListItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
-                              
+                              <span class='fa fa-trash del'></span>
                             <% } %>
+
                           </li>
-                          <% } %>
+                        <% } %>
                       <% } %>
                     </ul>
   
