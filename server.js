@@ -364,11 +364,6 @@ MongoClient.connect(dbConnectionStr)
             })
             .catch(error => console.error(error))
 
-        groceryListCollection.deleteOne({_id: request.body.itemFromJS})
-            .then(result => {
-                console.log('Item Deleted')
-                response.json('Item Deleted')
-            })
 
     })
     // Delete! End
@@ -465,6 +460,13 @@ MongoClient.connect(dbConnectionStr)
     // GROCERY LIST Start
     // ~~~~~~~~~
 
+    app.delete('/deleteGrocery', (req, res) => {
+      groceryListCollection.deleteOne({_id: req.body.itemFromJS})
+            .then(result => {
+                console.log('Grocery Item Deleted')
+                res.json('Grocery Item Deleted')
+            })
+    })
 
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
