@@ -40,30 +40,30 @@ async function deleteItem(){
 
 // Grocery Delete
 
-const deleteGroc = document.querySelectorAll('.del')
+// const deleteGroc = document.querySelectorAll('.del')
 
-Array.from(deleteGroc).forEach((element)=>{
-    element.addEventListener('click', deleteGrocery)
-})
+// Array.from(deleteGroc).forEach((element)=>{
+//     element.addEventListener('click', deleteGrocery)
+// })
 
-async function deleteGrocery(){
-    const itemText = this.parentNode.childNodes[1].innerText
-    try{
-        const response = await fetch('/deleteGrocery', {
-            method: 'delete',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              'itemFromJS': itemText
-            })
-        })
-      const data = await response.json()
-      console.log(data)
-      location.reload()
+// async function deleteGrocery(){
+//     const itemText = this.parentNode.childNodes[1].innerText
+//     try{
+//         const response = await fetch('/deleteGrocery', {
+//             method: 'delete',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//               'itemFromJS': itemText
+//             })
+//         })
+//       const data = await response.json()
+//       console.log(data)
+//       location.reload()
 
-  }catch(err){
-      console.log(err)
-  }
-}
+//   }catch(err){
+//       console.log(err)
+//   }
+// }
 
 
 // ~~~~~~~~~
