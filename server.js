@@ -291,7 +291,7 @@ MongoClient.connect(dbConnectionStr)
 
     // Note Update! Start
     // Monday Begin
-    app.post('/update-note-monday', (request, response) => {
+    app.put('/edit-note-monday', (request, response) => {
         mealPlanCollection
             .updateOne(
                 {note: request.body.itemFromJS},
