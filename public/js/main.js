@@ -152,19 +152,50 @@ function addNoteToItem() {
     // document.querySelector('.item-note-form').style.display = 'block'
     notes.classList.toggle('item-note-display-toggle')
     notesSaveBtn.classList.toggle('button-display-toggle')
-    console.log('Add Note To Item')
+    console.log('Note button has been clicked')
 }
 
-Array.from(notesSaveBtn).forEach( element => {
-    console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
-    element.addEventListener('click', )
 
-    // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
+    notesSaveBtn.addEventListener('click', editNote)
 
+// Array.from(notesSaveBtn).forEach( element => {
+//     console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
+//     element.addEventListener('click', editNoteTestTestTest)
 
-
+//     // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
     
-})
+// })
+
+function editNoteTest() {
+    console.log('if you can see this message then the note button event listerner works')
+}
+
+async function editNote(){
+    const itemText = this.parentNode.childNodes[2].innerText
+    let id = this.parentNode.id
+
+    // id = id.charAt(0).toUpperCase() + id.slice(1)
+    console.log('editNote id: ', id)
+
+    console.log('editNote this.parentNode.id: ', this.parentNode.id)
+
+    console.log('this.parentNode.childNodes[2].innerText', itemText)
+
+    try{
+        const response = await fetch(`edit-note-${id}`, {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'itemFromJS': itemText
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        // location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
 
