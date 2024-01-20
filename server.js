@@ -294,8 +294,8 @@ MongoClient.connect(dbConnectionStr)
     app.put('/edit-note-monday', (request, response) => {
         mealPlanCollection
             .updateOne(
-                {note: request.body.itemFromJS},
-                {$set: { complete: true } },
+                {mondaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
             {
                 sort: {_id: -1},
                 upsert: false
