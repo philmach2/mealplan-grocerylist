@@ -82,6 +82,7 @@ console.log('incomplete: ', Array.from(incompleteMealPlan))
 
 async function markCompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
+    console.log('itemText: ', itemText)
     let id = this.parentNode.id
 
     id = id.charAt(0).toUpperCase() + id.slice(1)
@@ -171,22 +172,30 @@ function editNoteTest() {
 }
 
 async function editNote(){
-    const itemText = this.parentNode.childNodes[2].innerText
+    const itemText = this.parentNode.childNodes[1].innerText
+    const noteText = this.parentNode.childNodes[10].innerText
     let id = this.parentNode.id
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
     console.log('editNote id: ', id)
+    // console.log('this: ', this)
+    // // console.table(this.parentNode.childNodes)
+    console.log(itemText)
+    console.log(noteText)
 
-    console.log('editNote this.parentNode.id: ', this.parentNode.id)
+    // console.log('editNote this.parentNode.id: ', this.parentNode.id)
 
-    console.log('this.parentNode.childNodes[2].innerText', itemText)
+    // console.log('this.parentNode.childNodes[2].innerText', itemText)
+
+    // console.log('this.parentNode.childNodes[3].innerText', this.parentNode.childNodes[3].innerText)
 
     try{
         const response = await fetch(`edit-note-${id}`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                'itemFromJS': itemText
+                'itemFromJS': itemText,
+                'noteFromJS': noteText
             })
           })
         const data = await response.json()
