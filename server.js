@@ -460,14 +460,6 @@ MongoClient.connect(dbConnectionStr)
     // GROCERY LIST Start
     // ~~~~~~~~~
 
-    app.delete('/deleteGrocery', (req, res) => {
-      groceryListCollection.deleteOne({_id: req.body.itemFromJS})
-            .then(result => {
-                console.log('Grocery Item Deleted')
-                res.json('Grocery Item Deleted')
-            })
-    })
-
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
         console.log('Server is running, you better catch it!')
