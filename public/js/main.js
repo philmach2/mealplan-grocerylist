@@ -1,36 +1,11 @@
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
-const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
-const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
+const completeGroceryList = document.querySelectorAll('#grocery-list .items span.item-name.complete')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .items span.item-name')
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
-
-// const itemCompleted = document.querySelectorAll('.item span.completed')
-// const deleteBtn = document.querySelectorAll('.fa-trash')
-
-// addNumOfItem.addEventListener('click', _ => {
-//     const itemCategory = 
-//     fetch('/addNum', {
-//         method: 'put',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             // numItem: tLikes
-//         })
-//     })
-// })
-
-// subNumOfItem.addEventListener('click', _ => {
-//     fetch('/subNum', {
-//         method: 'put',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-            
-//         })
-//     })
-// })
-
 
 // ~~~~~~~~~
 // Meal Plan Delete Functionality Start
@@ -62,6 +37,33 @@ async function deleteItem(){
 // ~~~~~~~~~
 // Meal Plan Delete Functionality End
 // ~~~~~~~~~
+
+// Grocery Delete
+
+const deleteGroc = document.querySelectorAll('.del')
+
+Array.from(deleteGroc).forEach((element)=>{
+    element.addEventListener('click', deleteGrocery)
+})
+
+async function deleteGrocery(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    try{
+        const response = await fetch('/deleteGrocery', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              'itemFromJS': itemText
+            })
+        })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+
+  }catch(err){
+      console.log(err)
+  }
+}
 
 
 // ~~~~~~~~~
