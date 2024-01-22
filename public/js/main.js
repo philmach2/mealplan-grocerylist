@@ -141,7 +141,7 @@ async function markIncompleteMealPlan(){
 const showNoteBtn = document.querySelectorAll('.fa-sticky-note')
 // const noteInput = document.querySelector('.item-note-form')
 const notes = document.querySelector('.item-note')
-const notesSaveBtn = document.querySelector('.save-button')
+const notesSaveBtn = document.querySelectorAll('.save-button')
 
 Array.from(showNoteBtn).forEach( element => {
     // console.log('Array.from(showNoteBtn): ', showNoteBtn)
@@ -161,8 +161,17 @@ function addNoteToItem() {
     console.log('Note button has been clicked')
 }
 
+// if (document.querySelector('#meal-plan-heading')) {
+//     notesSaveBtn.addEventListener('click', editNote)
+// }
 
-    notesSaveBtn.addEventListener('click', editNote)
+
+Array.from(notesSaveBtn).forEach( element => {
+    // console.log('Array.from(showNoteBtn): ', showNoteBtn)
+    element.addEventListener('click', editNote)
+})
+// notesSaveBtn.addEventListener('click', editNote)
+    
 
 // Array.from(notesSaveBtn).forEach( element => {
 //     console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
