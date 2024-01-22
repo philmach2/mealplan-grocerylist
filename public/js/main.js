@@ -1,7 +1,7 @@
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
-const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
-const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
+const completeGroceryList = document.querySelectorAll('#grocery-list .items span.item-name.complete')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .items span.item-name')
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
@@ -84,6 +84,7 @@ console.log('incomplete: ', Array.from(incompleteMealPlan))
 
 async function markCompleteMealPlan(){
     const itemText = this.parentNode.childNodes[1].innerText
+    console.log('itemText: ', itemText)
     let id = this.parentNode.id
 
     id = id.charAt(0).toUpperCase() + id.slice(1)
@@ -142,31 +143,81 @@ async function markIncompleteMealPlan(){
 const showNoteBtn = document.querySelectorAll('.fa-sticky-note')
 // const noteInput = document.querySelector('.item-note-form')
 const notes = document.querySelector('.item-note')
-const notesSaveBtn = document.querySelector('.save-button')
+const notesSaveBtn = document.querySelectorAll('.save-button')
 
 Array.from(showNoteBtn).forEach( element => {
-    console.log('Array.from(showNoteBtn): ', showNoteBtn)
+    // console.log('Array.from(showNoteBtn): ', showNoteBtn)
     element.addEventListener('click', addNoteToItem)
 })
 
 function addNoteToItem() {
-    console.log('notes: ', notes)
+    // console.log('notes: ', notes)
+
+    console.log('the node list: ', this.parentNode.parentNode.childNodes)
     // document.querySelector('.item-note-form').style.display = 'block'
-    notes.classList.toggle('item-note-display-toggle')
-    notesSaveBtn.classList.toggle('button-display-toggle')
-    console.log('Add Note To Item')
+
+    // notes.classList.toggle('item-note-display-toggle')
+    this.parentNode.parentNode.childNodes[10].classList.toggle('item-note-display-toggle')
+    // notesSaveBtn.classList.toggle('button-display-toggle')
+    this.parentNode.parentNode.childNodes[12].classList.toggle('button-display-toggle')
+    console.log('Note button has been clicked')
 }
 
+// if (document.querySelector('#meal-plan-heading')) {
+//     notesSaveBtn.addEventListener('click', editNote)
+// }
+
+
 Array.from(notesSaveBtn).forEach( element => {
-    console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
-    element.addEventListener('click', )
-
-    // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
-
-
-
-    
+    // console.log('Array.from(showNoteBtn): ', showNoteBtn)
+    element.addEventListener('click', editNote)
 })
+// notesSaveBtn.addEventListener('click', editNote)
+    
+
+// Array.from(notesSaveBtn).forEach( element => {
+//     console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
+//     element.addEventListener('click', editNoteTestTestTest)
+
+//     // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
+    
+// })
+
+
+async function editNote(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    const noteText = this.parentNode.childNodes[10].innerText
+    let id = this.parentNode.id
+
+    // id = id.charAt(0).toUpperCase() + id.slice(1)
+    console.log('editNote id: ', id)
+    // console.log('this: ', this)
+    // // console.table(this.parentNode.childNodes)
+    console.log(itemText)
+    console.log(noteText)
+
+    // console.log('editNote this.parentNode.id: ', this.parentNode.id)
+
+    // console.log('this.parentNode.childNodes[2].innerText', itemText)
+
+    // console.log('this.parentNode.childNodes[3].innerText', this.parentNode.childNodes[3].innerText)
+
+    try{
+        const response = await fetch(`edit-note-${id}`, {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'itemFromJS': itemText,
+                'noteFromJS': noteText
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        // location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
 

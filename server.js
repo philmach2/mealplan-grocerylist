@@ -291,11 +291,11 @@ MongoClient.connect(dbConnectionStr)
 
     // Note Update! Start
     // Monday Begin
-    app.post('/update-note-monday', (request, response) => {
+    app.put('/edit-note-monday', (request, response) => {
         mealPlanCollection
             .updateOne(
-                {note: request.body.itemFromJS},
-                {$set: { complete: true } },
+                {mondaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
             {
                 sort: {_id: -1},
                 upsert: false
@@ -357,15 +357,13 @@ MongoClient.connect(dbConnectionStr)
     //         })
     //         .catch(error => console.error(error))
 
-    //     mealPlanCollection.deleteOne({sundaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
-
-
-    // })
+        mealPlanCollection.deleteOne({sundaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
+    })
     // Delete! End
     // ~~~~~~~~~
     // MEAL PLAN End
@@ -457,19 +455,6 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
     });
 
-    app.delete('/deleteItem', (request, response) => {
-    groceryListCollection
-    .deleteOne(
-        { itemText: request.body.itemFromJS }
-    )
-    console.log(
-        { itemText: request.body.itemFromJS }
-        )
-        .then((result) => {
-            console.log('Grocery Item Deleted')
-            response.json('Grocery Item Deleted')
-        })
-    })
 
     // SERVER CONNECT
     app.listen(process.env.PORT, () => {
