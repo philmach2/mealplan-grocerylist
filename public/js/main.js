@@ -144,15 +144,20 @@ const notes = document.querySelector('.item-note')
 const notesSaveBtn = document.querySelector('.save-button')
 
 Array.from(showNoteBtn).forEach( element => {
-    console.log('Array.from(showNoteBtn): ', showNoteBtn)
+    // console.log('Array.from(showNoteBtn): ', showNoteBtn)
     element.addEventListener('click', addNoteToItem)
 })
 
 function addNoteToItem() {
-    console.log('notes: ', notes)
+    // console.log('notes: ', notes)
+
+    console.log('the node list: ', this.parentNode.parentNode.childNodes)
     // document.querySelector('.item-note-form').style.display = 'block'
-    notes.classList.toggle('item-note-display-toggle')
-    notesSaveBtn.classList.toggle('button-display-toggle')
+
+    // notes.classList.toggle('item-note-display-toggle')
+    this.parentNode.parentNode.childNodes[10].classList.toggle('item-note-display-toggle')
+    // notesSaveBtn.classList.toggle('button-display-toggle')
+    this.parentNode.parentNode.childNodes[12].classList.toggle('button-display-toggle')
     console.log('Note button has been clicked')
 }
 
@@ -167,9 +172,6 @@ function addNoteToItem() {
     
 // })
 
-function editNoteTest() {
-    console.log('if you can see this message then the note button event listerner works')
-}
 
 async function editNote(){
     const itemText = this.parentNode.childNodes[1].innerText
