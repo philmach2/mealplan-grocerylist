@@ -29,7 +29,7 @@ MongoClient.connect(dbConnectionStr)
             .find()
             .toArray()
             .then(results => {
-                // console.table(results)
+                console.table(results)
                 res.render('meal-plan.ejs', { mealPlanStuff: results })
             })
             .catch(error => console.error(error))
@@ -311,51 +311,51 @@ MongoClient.connect(dbConnectionStr)
 
 
     // Delete! Start
-    // app.delete('/deleteItem', (request, response) => {
-    //     // mondaymeal: this is the property that you would like to delete
-    //     // the below line of code works for the trash cans on Monday
-    //     // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
-    //     mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
+    app.delete('/deleteItem', (request, response) => {
+        // mondaymeal: this is the property that you would like to delete
+        // the below line of code works for the trash cans on Monday
+        // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
+        mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
         
-    //     mealPlanCollection.deleteOne({tuesdaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
+        mealPlanCollection.deleteOne({tuesdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
 
-    //     mealPlanCollection.deleteOne({wednesdaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
+        mealPlanCollection.deleteOne({wednesdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
 
-    //     mealPlanCollection.deleteOne({thursdaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
+        mealPlanCollection.deleteOne({thursdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
 
-    //     mealPlanCollection.deleteOne({fridaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
+        mealPlanCollection.deleteOne({fridaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
 
-    //     mealPlanCollection.deleteOne({saturdaymeal: request.body.itemFromJS})
-    //         .then(result => {
-    //             console.log('Meal Deleted')
-    //             return response.json('Meal Deleted')
-    //         })
-    //         .catch(error => console.error(error))
+        mealPlanCollection.deleteOne({saturdaymeal: request.body.itemFromJS})
+            .then(result => {
+                console.log('Meal Deleted')
+                response.json('Meal Deleted')
+            })
+            .catch(error => console.error(error))
 
         mealPlanCollection.deleteOne({sundaymeal: request.body.itemFromJS})
             .then(result => {
@@ -376,7 +376,7 @@ MongoClient.connect(dbConnectionStr)
     app.get('/grocery-list', (req, res) => {
         groceryListCollection.find().toArray()
         .then(results => {
-            //console.table(results)
+            console.table(results)
             res.render('grocery-list.ejs', { groceryListItems: results })
         })
         .catch(error => console.error(error))
@@ -454,6 +454,9 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
+    // ~~~~~~~~~
+    // GROCERY LIST Start
+    // ~~~~~~~~~
 
 
     // SERVER CONNECT
