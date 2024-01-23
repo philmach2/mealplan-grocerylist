@@ -1,7 +1,7 @@
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
-const completeGroceryList = document.querySelectorAll('#grocery-list .items span.item-name.complete')
-const incompleteGroceryList = document.querySelectorAll('#grocery-list .items span.item-name')
+const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
