@@ -38,7 +38,6 @@ async function deleteItem(){
 // Meal Plan Delete Functionality End
 // ~~~~~~~~~
 
-
 // ~~~~~~~~~
 // Meal Plan Mark Complete Functionality Start
 // ~~~~~~~~~
