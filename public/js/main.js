@@ -7,31 +7,6 @@ const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-n
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
 
-// const itemCompleted = document.querySelectorAll('.item span.completed')
-// const deleteBtn = document.querySelectorAll('.fa-trash')
-
-// addNumOfItem.addEventListener('click', _ => {
-//     const itemCategory = 
-//     fetch('/addNum', {
-//         method: 'put',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             // numItem: tLikes
-//         })
-//     })
-// })
-
-// subNumOfItem.addEventListener('click', _ => {
-//     fetch('/subNum', {
-//         method: 'put',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-            
-//         })
-//     })
-// })
-
-
 // ~~~~~~~~~
 // Meal Plan Delete Functionality Start
 // ~~~~~~~~~
