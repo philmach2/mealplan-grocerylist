@@ -307,6 +307,27 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     // Monday End
+
+    // tuesday Begin
+    app.put('/edit-note-tuesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {tuesdaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan tuesday')
+                response.json('Updated note meal plan tuesday')
+            })
+            .catch(error => console.error(error))
+    })
+    // tuesday End
+
+
+
     // Note Update! End
 
 

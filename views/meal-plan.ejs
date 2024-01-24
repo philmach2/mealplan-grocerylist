@@ -277,29 +277,134 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200" type="text" placeholder="Tuesday meal" name="tuesdaymeal" />
-                  <input type="hidden" name="weekday" value="tuesday">
-                  <input type="hidden" name="complete" value="false">
+                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Tuesday meal" name="tuesdaymeal" required />
+                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
+                  <select class="bg-gray-200 my-1" name="tuesdaymealtime" required>
+
+                  <!-- <datalist id="mondaymealtimeslist"> -->
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  <!-- </datalist> -->
+                  </select>
+                  <input type="hidden" name="weekday" value="tuesday" />
+                  <input type="hidden" name="complete" value="false" />
+                  <input type="hidden" name="note" value="note about item" />
                   <button type="submit">Add</button>
                 </form>
+
+                <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-            
-                    <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                      <li id="tuesday" class="item">
-                        <% if(mealPlanStuff[i].complete === true) { %>
-                          <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% }else { %>
-                          <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% } %>
-                      </li>
+                    <% if (mealPlanStuff[i].tuesdaymealtime == 'breakfast') { %>
+                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                        <li id="tuesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
                     <% } %>
-                  
                   <% } %>
                 </ul>
-              </dd>
+
+                <h4 class="font-semibold">Lunch</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].tuesdaymealtime == 'lunch') { %>
+                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                        <li id="tuesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
+                    <% } %>
+                  <% } %>
+                </ul>
+
+                <h4 class="font-semibold">Dinner</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].tuesdaymealtime == 'dinner') { %>
+                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                        <li id="tuesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
+                    <% } %>
+                  <% } %>
+                </ul>
+
+                <h4 class="font-semibold">Snack</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].tuesdaymealtime == 'snack') { %>
+                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                        <li id="tuesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
+                    <% } %>
+                  <% } %>
+                </ul>
             </div>
             <!-- Tuesday End -->
             
@@ -315,26 +420,131 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200" type="text" placeholder="Wednesday meal" name="wednesdaymeal" />
-                  <input type="hidden" name="weekday" value="wednesday">
-                  <input type="hidden" name="complete" value="false">
+                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Wednesday meal" name="wednesdaymeal" required />
+                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
+                  <select class="bg-gray-200 my-1" name="wednesdaymealtime" required>
+
+                  <!-- <datalist id="mondaymealtimeslist"> -->
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  <!-- </datalist> -->
+                  </select>
+                  <input type="hidden" name="weekday" value="wednesday" />
+                  <input type="hidden" name="complete" value="false" />
+                  <input type="hidden" name="note" value="note about item" />
                   <button type="submit">Add</button>
                 </form>
+
+                <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-            
-                    <% if (mealPlanStuff[i].wednesdaymeal) {%>
-                      <li id="wednesday" class="item">
-                        <% if(mealPlanStuff[i].complete === true) { %>
-                          <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% }else { %>
-                          <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% } %>
-                      </li>
+                    <% if (mealPlanStuff[i].wednesdaymealtime == 'breakfast') { %>
+                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                        <li id="wednesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
                     <% } %>
-                  
+                  <% } %>
+                </ul>
+
+                <h4 class="font-semibold">Lunch</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].wednesdaymealtime == 'lunch') { %>
+                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                        <li id="wednesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
+                    <% } %>
+                  <% } %>
+                </ul>
+
+                <h4 class="font-semibold">Dinner</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].wednesdaymealtime == 'dinner') { %>
+                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                        <li id="wednesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
+                    <% } %>
+                  <% } %>
+                </ul>
+                <h4 class="font-semibold">Snack</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].wednesdaymealtime == 'snack') { %>
+                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                        <li id="wednesday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
+                    <% } %>
                   <% } %>
                 </ul>
               </dd>
@@ -353,26 +563,48 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200" type="text" placeholder="Thursday meal" name="thursdaymeal" />
-                  <input type="hidden" name="weekday" value="thursday">
-                  <input type="hidden" name="complete" value="false">
+                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Thursday meal" name="thursdaymeal" required />
+                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
+                  <select class="bg-gray-200 my-1" name="thursdaymealtime" required>
+
+                  <!-- <datalist id="mondaymealtimeslist"> -->
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  <!-- </datalist> -->
+                  </select>
+                  <input type="hidden" name="weekday" value="thursday" />
+                  <input type="hidden" name="complete" value="false" />
+                  <input type="hidden" name="note" value="note about item" />
                   <button type="submit">Add</button>
                 </form>
+
+                <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-            
-                    <% if (mealPlanStuff[i].thursdaymeal) {%>
-                      <li id="thursday" class="item">
-                        <% if(mealPlanStuff[i].complete === true) { %>
-                          <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% }else { %>
-                          <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% } %>
-                      </li>
+                    <% if (mealPlanStuff[i].thursdaymealtime == 'breakfast') { %>
+                      <% if (mealPlanStuff[i].thursdaymeal) {%>
+                        <li id="thursday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
                     <% } %>
-                  
                   <% } %>
                 </ul>
             
@@ -392,26 +624,48 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200" type="text" placeholder="Friday meal" name="fridaymeal" />
-                  <input type="hidden" name="weekday" value="friday">
-                  <input type="hidden" name="complete" value="false">
+                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Friday meal" name="Fridaymeal" required />
+                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
+                  <select class="bg-gray-200 my-1" name="fridaymealtime" required>
+
+                  <!-- <datalist id="mondaymealtimeslist"> -->
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  <!-- </datalist> -->
+                  </select>
+                  <input type="hidden" name="weekday" value="friday" />
+                  <input type="hidden" name="complete" value="false" />
+                  <input type="hidden" name="note" value="note about item" />
                   <button type="submit">Add</button>
                 </form>
+
+                <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-            
-                    <% if (mealPlanStuff[i].fridaymeal) {%>
-                      <li id="friday" class="item">
-                        <% if(mealPlanStuff[i].complete === true) { %>
-                          <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% }else { %>
-                          <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% } %>
-                      </li>
+                    <% if (mealPlanStuff[i].fridaymealtime == 'breakfast') { %>
+                      <% if (mealPlanStuff[i].fridaymeal) {%>
+                        <li id="friday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
                     <% } %>
-                  
                   <% } %>
                 </ul>
 
@@ -431,26 +685,48 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200" type="text" placeholder="Saturday meal" name="saturdaymeal" />
-                  <input type="hidden" name="weekday" value="saturday">
-                  <input type="hidden" name="complete" value="false">
+                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Saturday meal" name="saturdaymeal" required />
+                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
+                  <select class="bg-gray-200 my-1" name="saturdaymealtime" required>
+
+                  <!-- <datalist id="mondaymealtimeslist"> -->
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  <!-- </datalist> -->
+                  </select>
+                  <input type="hidden" name="weekday" value="saturday" />
+                  <input type="hidden" name="complete" value="false" />
+                  <input type="hidden" name="note" value="note about item" />
                   <button type="submit">Add</button>
                 </form>
+
+                <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-            
-                    <% if (mealPlanStuff[i].saturdaymeal) {%>
-                      <li id="saturday" class="item">
-                        <% if(mealPlanStuff[i].complete === true) { %>
-                          <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% }else { %>
-                          <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
-                          <span class='fa fa-trash'></span>
-                        <% } %>
-                      </li>
+                    <% if (mealPlanStuff[i].saturdaymealtime == 'breakfast') { %>
+                      <% if (mealPlanStuff[i].saturdaymeal) {%>
+                        <li id="saturday" class="item ml-3">
+                          <% if(mealPlanStuff[i].complete === true) { %>
+                            <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
+                          <% }else { %>
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+                          <% } %>
+                        </li>
+                      <% } %>
                     <% } %>
-                  
                   <% } %>
                 </ul>
 
@@ -470,29 +746,50 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200" type="text" placeholder="Sunday meal" name="sundaymeal" />
-                  <input type="hidden" name="weekday" value="sunday">
-                  <input type="hidden" name="complete" value="false">
+                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Sunday meal" name="sundaymeal" required />
+                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
+                  <select class="bg-gray-200 my-1" name="sundaymealtime" required>
+
+                  <!-- <datalist id="mondaymealtimeslist"> -->
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  <!-- </datalist> -->
+                  </select>
+                  <input type="hidden" name="weekday" value="sunday" />
+                  <input type="hidden" name="complete" value="false" />
+                  <input type="hidden" name="note" value="note about item" />
                   <button type="submit">Add</button>
-                  <ul>
-                    <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-              
+                </form>
+
+                <h4 class="font-semibold">Breakfast</h4>
+                <ul>
+                  <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
+                    <% if (mealPlanStuff[i].sundaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].sundaymeal) {%>
-                        <li id="sunday" class="item">
+                        <li id="sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
-                            <span class='fa fa-trash'></span>
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
+
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
-                            <span class='fa fa-trash'></span>
+                            <!-- <button><span class="far fa-edit"></span></button> -->
+                            <button><span class="far fa-sticky-note"></span></button>
+                            <span class='fa fa-trash'></span><br />
+                            <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
+                            <button class="save-button button1" type="button">save</button>
                           <% } %>
                         </li>
                       <% } %>
-                    
                     <% } %>
-                  </ul>
-
-                </form>
+                  <% } %>
+                </ul>
               </dd>
             </div>
             <!-- Sunday end -->
