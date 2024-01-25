@@ -27,10 +27,10 @@
   
 .save-button.button1 {
     background-color: #04AA6D;
-} /* Green */
+}
 .save-button.button2 {
     background-color: #008CBA;
-} /* Blue */
+}
 
 .button-display-toggle {
     display: inline-block;
@@ -64,14 +64,6 @@
     margin: 4px 2px;
     cursor: pointer;
   }
-  
-.save-button.button1 {
-    background-color: #04AA6D;
-} /* Green */
-
-.save-button.button2 {
-    background-color: #008CBA;
-} /* Blue */
 
 .button-display-toggle {
     display: inline-block;
@@ -83,4 +75,16 @@
 
 .item-note-display-toggle {
     display: block;
+}
+
+.checkmark {
+    /* display: inline-block; */
+    display: none;
+    height: 1.5rem;
+    fill: #4b5563;
+    padding-left: 1rem;
+}
+
+.checkmark-display {
+    display: inline-block;
 }
