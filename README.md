@@ -1,6 +1,7 @@
 # Grocery and Meal Planner
 An all-in-one resource to coordinate your weekly meals and grocery list. 
 
+Build by: [Phil Mach](https://github.com/philmach2) & [Chris Nelson](https://github.com/ccchrissss)
 Link to project: 
 
 ## How It's Made:
