@@ -150,7 +150,7 @@ Array.from(showNoteBtn).forEach( element => {
 function addNoteToItem() {
     // console.log('notes: ', notes)
 
-    console.log('the node list: ', this.parentNode.parentNode.childNodes)
+    // console.log('the node list: ', this.parentNode.parentNode.childNodes)
     // document.querySelector('.item-note-form').style.display = 'block'
 
     // notes.classList.toggle('item-note-display-toggle')
@@ -184,20 +184,12 @@ Array.from(notesSaveBtn).forEach( element => {
 async function editNote(){
     const itemText = this.parentNode.childNodes[1].innerText
     const noteText = this.parentNode.childNodes[10].innerText
-    let id = this.parentNode.id
+    const id = this.parentNode.id
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
-    console.log('editNote id: ', id)
-    // console.log('this: ', this)
-    // // console.table(this.parentNode.childNodes)
-    console.log(itemText)
-    console.log(noteText)
-
-    // console.log('editNote this.parentNode.id: ', this.parentNode.id)
-
-    // console.log('this.parentNode.childNodes[2].innerText', itemText)
-
-    // console.log('this.parentNode.childNodes[3].innerText', this.parentNode.childNodes[3].innerText)
+    // console.log('editNote id: ', id)
+    // console.log(itemText)
+    // console.log(noteText)
 
     try{
         const response = await fetch(`edit-note-${id}`, {

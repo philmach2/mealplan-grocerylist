@@ -307,6 +307,117 @@ MongoClient.connect(dbConnectionStr)
             .catch(error => console.error(error))
     })
     // Monday End
+
+    // Tuesday Begin
+    app.put('/edit-note-tuesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {tuesdaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan tuesday')
+                response.json('Updated note meal plan tuesday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Tuesday End
+
+    // Wednesday Begin
+    app.put('/edit-note-wednesday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {wednesdaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan wednesday')
+                response.json('Updated note meal plan wednesday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Wednesday End
+
+    // Thursday Begin
+    app.put('/edit-note-thursday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {thursdaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan thursday')
+                response.json('Updated note meal plan thursday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Thursday End
+
+    // Friday Begin
+    app.put('/edit-note-friday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {fridaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan friday')
+                response.json('Updated note meal plan friday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Friday End
+
+    // Saturday Begin
+    app.put('/edit-note-saturday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {saturdaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan saturday')
+                response.json('Updated note meal plan saturday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Saturday End
+
+    // Sunday Begin
+    app.put('/edit-note-sunday', (request, response) => {
+        mealPlanCollection
+            .updateOne(
+                {sundaymeal: request.body.itemFromJS},
+                {$set: { note: request.body.noteFromJS } },
+            {
+                sort: {_id: -1},
+                upsert: false
+            })
+            .then(result => {
+                console.log('Updated note meal plan sunday')
+                response.json('Updated note meal plan sunday')
+            })
+            .catch(error => console.error(error))
+    })
+    // Sunday End
+
+
+
     // Note Update! End
 
 
