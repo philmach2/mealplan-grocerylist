@@ -1,7 +1,8 @@
 # Munch Map - A Meal Planner and Grocery List Application
 
 Build by: Phil Mach & Chris Nelson ([Phil](https://github.com/philmach2) | [Chris](https://github.com/ccchrissss))
-Live link: (https://munchmap.cyclic.app/)
+
+Live Link: https://munchmap.cyclic.app/
 
 <img width="1440" alt="Screenshot 2024-01-25 at 3 12 21 PM" src="https://github.com/philmach2/mealplan-grocerylist/assets/110493891/12789d7d-127d-4d3e-916a-00b0cd70888a">
 
