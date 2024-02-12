@@ -571,7 +571,7 @@ MongoClient.connect(dbConnectionStr)
 
 
     // SERVER CONNECT
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log('Server is running, you better catch it!')
     })  
 }) 
