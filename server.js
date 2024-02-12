@@ -14,10 +14,6 @@ let db,
 
 MongoClient.connect(dbConnectionStr)
   .then((client) => {
-    // SERVER CONNECT
-    app.listen(process.env.PORT || 3000, () => {
-      console.log("Server is running, you better catch it!");
-    });
     console.log(`Connected to ${dbName} Database`);
     db = client.db(dbName);
     groceryListCollection = db.collection("grocery-list-collection");
@@ -586,6 +582,14 @@ MongoClient.connect(dbConnectionStr)
           response.json("Marked Incomplete");
         })
         .catch((error) => console.error(error));
+    });
+    // ~~~~~~~~~
+    // GROCERY LIST Start
+    // ~~~~~~~~~
+
+    // SERVER CONNECT
+    app.listen(process.env.PORT || 3000, () => {
+      console.log("Server is running, you better catch it!");
     });
   })
   .catch(console.error);
