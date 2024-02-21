@@ -26,26 +26,33 @@
             <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
           </a>
         </div>
-        <div class="flex lg:hidden">
+        <!-- <div class="flex lg:hidden">
           <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Open main menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-12">
+        </div> -->
+        <div class="gap-x-4 sm:gap-x-6 flex lg:gap-x-12">
           <a href="meal-plan" class="text-lg font-semibold leading-6 text-gray-900">Meal Plan</a>
           <a href="grocery-list" class="text-lg font-semibold leading-6 text-gray-900">Grocery List</a>
           <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
           <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
         </div>
+
         <!-- leave this div so the Meal Plan and Grocery List nav links stay centered -->
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <!-- <div class="sm:flex sm:flex-1 sm:justify-end">
+        </div> -->
+        <div class="opacity-0 flex lg:flex-1">
+          <a class="-m-1.5 p-1.5">
+            <span class="sr-only">Meal Plan Grocery List</span>
+            <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
+            <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
+          </a>
         </div>
       </nav>
-      <!-- Mobile menu, show/hide based on menu open state. -->
-      <div class="lg:hidden" role="dialog" aria-modal="true">
+
     </header>
     <!-- Header End -->
 
@@ -77,9 +84,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Monday meal" name="mondaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Monday meal" name="mondaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="mondaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mondaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -106,7 +113,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
@@ -114,7 +121,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -134,7 +141,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
@@ -142,7 +149,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -162,7 +169,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
@@ -170,7 +177,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -190,7 +197,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
@@ -198,7 +205,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -249,9 +256,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Tuesday meal" name="tuesdaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Tuesday meal" name="tuesdaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="tuesdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="tuesdaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -278,7 +285,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
@@ -286,7 +293,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -306,7 +313,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
@@ -314,7 +321,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -334,7 +341,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
@@ -342,7 +349,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -362,7 +369,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
@@ -370,7 +377,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -393,9 +400,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Wednesday meal" name="wednesdaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Wednesday meal" name="wednesdaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="wednesdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="wednesdaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -422,7 +429,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
@@ -430,7 +437,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -450,7 +457,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
@@ -458,7 +465,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -478,7 +485,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
@@ -486,7 +493,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -505,7 +512,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
@@ -513,7 +520,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -537,9 +544,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Thursday meal" name="thursdaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Thursday meal" name="thursdaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="thursdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="thursdaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -566,7 +573,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
@@ -574,7 +581,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -594,7 +601,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
@@ -602,7 +609,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -622,7 +629,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
@@ -630,7 +637,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -650,7 +657,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
@@ -658,7 +665,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -683,9 +690,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Friday meal" name="fridaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Friday meal" name="fridaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="fridaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="fridaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -712,7 +719,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
@@ -720,7 +727,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -740,7 +747,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
@@ -748,7 +755,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -768,7 +775,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
@@ -776,7 +783,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -796,7 +803,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
@@ -804,7 +811,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -829,9 +836,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Saturday meal" name="saturdaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Saturday meal" name="saturdaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="saturdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="saturdaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -858,7 +865,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
@@ -866,7 +873,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -886,7 +893,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
@@ -894,7 +901,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -914,7 +921,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
@@ -922,7 +929,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -942,7 +949,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
@@ -950,7 +957,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -975,9 +982,9 @@
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
                 <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1" autocomplete="on" type="text" placeholder="Sunday meal" name="sundaymeal" required />
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Sunday meal" name="sundaymeal" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1" name="sundaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="sundaymealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -1004,7 +1011,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
@@ -1012,7 +1019,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -1032,7 +1039,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
@@ -1040,7 +1047,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -1060,7 +1067,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
@@ -1068,7 +1075,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>
@@ -1088,7 +1095,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
                             <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
@@ -1096,7 +1103,7 @@
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash'></span><br />
                             <div class="item-note" contenteditable="true"><%= mealPlanStuff[i].note %></div>
-                            <button class="save-button button1" type="button">save</button>
+                            <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                           <% } %>
                         </li>
                       <% } %>

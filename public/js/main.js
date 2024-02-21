@@ -185,6 +185,10 @@ async function editNote(){
     const itemText = this.parentNode.childNodes[1].innerText
     const noteText = this.parentNode.childNodes[10].innerText
     const id = this.parentNode.id
+    const checkmark = this.parentNode.childNodes[13]
+
+    
+    // console.log(this.parentNode.childNodes)
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
     // console.log('editNote id: ', id)
@@ -202,6 +206,11 @@ async function editNote(){
           })
         const data = await response.json()
         console.log(data)
+
+        checkmark.classList.add('checkmark-display')
+        setTimeout( _ => {
+            checkmark.classList.remove('checkmark-display')
+        }, 2000)
         // location.reload()
     }catch(err){
         console.log(err)
